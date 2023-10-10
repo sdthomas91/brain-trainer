@@ -35,8 +35,154 @@
     <!---- Navigation -->
     <!-- Bootstrap NAV template used https://bootsnipp.com/snippets/VvlPR - need to add mobile responsiveness -->
     <div class="container-fluid navbar-container">
+      <!-- <nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mt-1 mt-lg-0 leader-list">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-trophy leaderboard-icon nav-icon"></i></a>
+                </li>
+            </ul>
+        
+            <div class="mx-auto">
+                <a href="index.html" class="navbar-brand" id="logo">
+                    <h1>BrainTrainer</h1>
+                </a>
+            </div>
+        
+            <ul class="navbar-nav mt-1 mt-lg-0 icon-list">
+                <li class="nav-item nav-icon-text list-icon">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-circle-info info-icon nav-icon"></i>How
+                        To Play</a>
+                </li>
+                <li class="nav-item nav-icon-text list-icon">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-circle-question question-icon nav-icon"></i>Help</a>
+                </li>
+            </ul>
+        </div>
+      </nav> -->
       <nav class="navbar navbar-expand-lg navbar-dark">
+        <!--  Show this only on mobile to medium screens  -->
+        <a class="navbar-brand d-lg-none mx-auto" href="index.html"
+          ><h1 class="logo-text-mobile">BT</h1></a
+        >
+
         <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggle"
+          aria-controls="navbarToggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--  Use flexbox utility classes to change how the child elements are justified  -->
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarToggle"
+        >
+          <ul class="navbar-nav mt-1 mt-lg-0 leader-list">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#"
+                ><i
+                  class="d-none d-lg-block fa-solid fa-trophy leaderboard-icon nav-icon"
+                ></i
+                ><span class="d-block d-lg-none">Leaderboard</span></a
+              >
+            </li> -->
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#"
+                ><i class="d-inline d-lg-block fa-solid fa-trophy nav-icon"></i
+                >Leaderboard</a
+              >
+            </li>
+          </ul>
+
+          <!--   Show this only lg screens and up   -->
+          <a class="navbar-brand d-none d-lg-block" href="index.html"
+            ><h1 class="logo-text">BrainTrainer</h1></a
+          >
+
+          <ul class="navbar-nav">
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#"
+                ><i
+                  class="d-inline d-lg-block fa-solid fa-circle-info nav-icon"
+                ></i
+                >How To Play</a
+              >
+            </li>
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#"
+                ><i
+                  class="d-inline d-lg-block fa-solid fa-circle-question nav-icon"
+                ></i
+                >Help</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- /Navigation -->
+    <!-- /Header -->
+    <!---- Progress-Tiles -->
+    <div class="container">
+      <div class="row row-cols-4">
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+        <div class="col-3">Column</div>
+      </div>
+    </div>
+    <!-- /progress-Tiles -->
+    <!---- Footer -->
+    <!-- /Footer -->
+    <script src="assets/js/script.js"></script>
+    <!-- BootStrap Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BS Scripts -->
+  </body>
+</html>
+
+<!-- <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -79,39 +225,4 @@
               >
             </li>
           </ul>
-        </div>
-      </nav>
-    </div>
-    <!-- /Navigation -->
-    <!-- /Header -->
-    <!---- Progress-Tiles -->
-    <div class="container">
-      <div class="row row-cols-4">
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-        <div class="col-3">Column</div>
-      </div>
-    </div>
-    <!-- /progress-Tiles -->
-    <!---- Footer -->
-    <!-- /Footer -->
-    <script src="assets/js/script.js"></script>
-  </body>
-</html>
+        </div> -->

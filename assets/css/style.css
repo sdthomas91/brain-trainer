@@ -17,25 +17,30 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     font-family: Kavoon, Arial, sans-serif;
 }
 
+
 /* -------NavBar-------- */
-#logo {
-    color: white;
+.navbar-brand {
     text-shadow: 3px 3px #1b1b1b;
-    width: 150px;
-    height: 70px;
+}
+
+.logo-text-mobile {
+    font-size: 4rem;
+}
+
+.logo-text {
+    font-size: 3rem;
 }
 
 .navbar-toggler {
     margin-top: 15px;
 }
 
-.leaderboard-icon {
-    font-size: 3rem;
-}
+
 
 .nav-icon-text {
     font-family: Kavoon, Arial, sans-serif;
@@ -55,43 +60,53 @@ h6 {
     margin-right: 20px;
 }
 
-/* -NavBar Icons- */
-
-.nav-icon {
-    color: white;
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
 }
+
+/* -NavBar Icons- */
 
 .list-icon {
     margin: 0 10px;
 }
 
-.info-icon,
-.question-icon {
+.nav-icon {
     display: block;
     text-align: center;
     font-size: 3rem;
     margin-bottom: 5px;
-
+    color: white;
 }
+
 
 /* ------Media Queries------ */
-@media screen and (min-width: 992px) {
-    .navbar {
-        height: 130px;
+
+/* ------------------ Medium Screens */
+
+@media screen and (max-width: 992px) {
+    .leader-list {
+        margin-left: 0px;
     }
 
-    #logo {
-        width: 260px;
-        height: 120px;
-        position: relative;
-        bottom: -20px;
-    }
-
-    .navbar-light .navbar-nav .nav-link {
-        padding-right: 75px;
-    }
-
-    #nav-left {
-        padding-left: 30px;
+    .nav-icon {
+        font-size: 1.4rem;
+        margin-right: 10px;
     }
 }
+
+/* ------------------ Small Screens */
+
+@media screen and (max-width: 768px) {}
+
+/* ------------------ XS Screens */
+@media screen and (max-width: 576px) {}
+
+/* ------------------ XXS Screens */
+@media screen and (max-width: 417px) {}
+
+/*-------------------------Min-Width Media Queries */
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 993px) {}
+
+@media screen and (min-width: 1200px) {}
