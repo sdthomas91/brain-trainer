@@ -12,9 +12,19 @@ body {
     height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Kavoon, Arial, sans-serif;
+}
+
 /* -------NavBar-------- */
 #logo {
-    background: #ccc;
+    color: white;
+    text-shadow: 3px 3px #1b1b1b;
     width: 150px;
     height: 70px;
 }
@@ -23,6 +33,48 @@ body {
     margin-top: 15px;
 }
 
+.leaderboard-icon {
+    font-size: 3rem;
+}
+
+.nav-icon-text {
+    font-family: Kavoon, Arial, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.nav-item a {
+    color: white;
+}
+
+.leader-list {
+    margin-left: 20px;
+}
+
+.icon-list {
+    margin-right: 20px;
+}
+
+/* -NavBar Icons- */
+
+.nav-icon {
+    color: white;
+}
+
+.list-icon {
+    margin: 0 10px;
+}
+
+.info-icon,
+.question-icon {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5px;
+
+}
+
+/* ------Media Queries------ */
 @media screen and (min-width: 992px) {
     .navbar {
         height: 130px;
