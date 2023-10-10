@@ -57,8 +57,9 @@ p {
     margin-right: 20px;
 }
 
+/* BootStrap Overrides */
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
 }
 
 .nav-link i:hover,
@@ -70,6 +71,20 @@ p {
     text-decoration: none;
 }
 
+.navbar-dark .navbar-toggler {
+    color: white;
+
+}
+
+.navbar-toggler {
+    border: none;
+    margin-top: 0;
+}
+
+.navbar-toggler-icon {
+    width: 2.3em;
+    height: 2.3em;
+}
 
 /* -NavBar Icons- */
 
