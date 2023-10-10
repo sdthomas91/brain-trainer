@@ -79,6 +79,50 @@ p {
 }
 
 
+/* ------Homepage Tiles------ */
+
+.level-tile {
+    background: none;
+    color: #f47d15;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 20px 0;
+
+}
+
+.tile-content {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    padding: 5%;
+    font-size: 2.5rem;
+    text-align: center;
+
+}
+
+.tile-content p {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.level-link {
+    color: #f47d15;
+}
+
+.level-link:hover,
+.level-link:active,
+.level-link:focus,
+.level-link:active:focus {
+    color: #b65501;
+    font-size: 2.8rem;
+    text-decoration: none;
+}
+
 /* ------Media Queries------ */
 
 /* ------------------ Medium Screens */
