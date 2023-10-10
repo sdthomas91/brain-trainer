@@ -1,15 +1,12 @@
 /* -------Global Styles-------- */
-html {
-    height: 100%;
-}
-
 body {
     background: rgb(75, 0, 102);
     background: -moz-linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
     background: linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b0066", endColorstr="#b26115", GradientType=1);
-    height: 100%;
+    background-position: fixed;
+    background-repeat: no-repeat;
 }
 
 h1,
@@ -63,6 +60,16 @@ p {
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8);
 }
+
+.nav-link i:hover,
+.nav-link i:active,
+.nav-link i:focus,
+.nav-link i:active:focus {
+    color: #f47d15;
+    font-size: 3.2rem;
+    text-decoration: none;
+}
+
 
 /* -NavBar Icons- */
 
