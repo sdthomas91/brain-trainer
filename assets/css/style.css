@@ -1,0 +1,45 @@
+/* -------Global Styles-------- */
+html {
+    height: 100%;
+}
+
+body {
+    background: rgb(75, 0, 102);
+    background: -moz-linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
+    background: linear-gradient(180deg, rgba(75, 0, 102, 1) 0%, rgba(178, 97, 21, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b0066", endColorstr="#b26115", GradientType=1);
+    height: 100%;
+}
+
+/* -------NavBar-------- */
+#logo {
+    background: #ccc;
+    width: 150px;
+    height: 70px;
+}
+
+.navbar-toggler {
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        height: 130px;
+    }
+
+    #logo {
+        width: 260px;
+        height: 120px;
+        position: relative;
+        bottom: -20px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding-right: 75px;
+    }
+
+    #nav-left {
+        padding-left: 30px;
+    }
+}
