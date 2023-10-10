@@ -1,12 +1,12 @@
-<h1 align="center">Nina Gazzard SPMU & Beauty</h1>
+<h1 align="center">BrainTrainer - The Memory Game</h1>
 
-[View the live project here.](https://sdthomas91.github.io/ng-spmu-milestone/)
+[View the live project here.](https://sdthomas91.github.io/brain-trainer/)
 
-This is the main marketing site for Nina Gazzard Semi-Permanent Makeup and Beauty. It is designed to be responsive and accessible on a range of devices, making it easy and accessible for clients and collaborators alike. It is a continuous scroll, single page site with a modal pop-up newsletter sign-up. It will also feature a modal gallery for mobile users.
+This is a brain training memory game that allows users to progress through increasingly difficult flip card memory challenges. It is designed to be responsive across all devices and will contain a high score and timer section to enable users to continuall improve.
 
-Utilising Bootstrap row/column tool the site will present responsively and in a well structured, readable, easy to navigate way so as to allow maximum UX.
+Utilising Bootstrap row/column tool the site will present responsively and in a well structured, readable, easy to navigate way so as to allow maximum UX. With the use of Javascript the web app will provide a visually appealing and mentally challenging, yet fun and interactive game. 
 
-<h2 align="center"><img src="/assets/images/Mockup.jpg"></h2>
+<h2 align="center"><img src="/assets/images/bt-mockup.png"></h2>
 
 ## User Experience (UX)
 
