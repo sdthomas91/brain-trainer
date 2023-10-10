@@ -23,6 +23,7 @@ p {
 /* -------NavBar-------- */
 .navbar-brand {
     text-shadow: 3px 3px #1b1b1b;
+    padding-left: 70px;
 }
 
 .logo-text-mobile {
@@ -32,12 +33,6 @@ p {
 .logo-text {
     font-size: 3rem;
 }
-
-.navbar-toggler {
-    margin-top: 15px;
-}
-
-
 
 .nav-icon-text {
     font-family: Kavoon, Arial, sans-serif;
@@ -158,6 +153,7 @@ p {
         font-size: 1.4rem;
         margin-right: 10px;
     }
+
 }
 
 /* ------------------ Small Screens */
