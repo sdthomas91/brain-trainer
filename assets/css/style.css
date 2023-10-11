@@ -7,6 +7,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b0066", endColorstr="#b26115", GradientType=1);
     background-position: fixed;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 h1,
@@ -19,6 +20,21 @@ p {
     font-family: Kavoon, Arial, sans-serif;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* ------Shadows------ */
+
+.shadow-text {
+    text-shadow: 3px 4px 5px rgba(30, 30, 30, 0.7);
+}
+
+.shadow-tile {
+    box-shadow: 4px 4px 8px rgba(30, 30, 30, 0.6);
+}
 
 /* -------NavBar-------- */
 .navbar-brand {
@@ -95,7 +111,6 @@ p {
     font-size: 3rem;
     margin-bottom: 5px;
     color: white;
-    text-shadow: 3px 4px 5px rgba(30, 30, 30, 0.7);
 }
 
 
@@ -118,7 +133,6 @@ p {
     padding: 5%;
     font-size: 2.5rem;
     text-align: center;
-    box-shadow: 4px 4px 8px rgba(30, 30, 30, 0.6);
 }
 
 .tile-content p {
@@ -142,6 +156,66 @@ p {
     text-decoration: none;
 }
 
+/* ------Game Tiles------ */
+
+.right-tile,
+.left-tile {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    padding: 5%;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.right-tile p,
+.left-tile p {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.right-tile {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.left-tile {
+    margin-left: auto;
+}
+
+/* ------Level Content------ */
+
+.level-heading {
+    text-align: center;
+    color: #f1a906;
+    font-size: 3rem;
+}
+
+.level-subheading {
+    text-align: left;
+    color: #f1a906;
+    font-size: 2rem;
+}
+
+#timer {
+    margin-top: 15px;
+    color: white;
+}
+
+.level-text-content {
+    text-align: left;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.level-text-lg {
+    padding-top: 50px;
+}
+
 /* ------Media Queries------ */
 
 /* ------------------ Medium Screens */
@@ -160,7 +234,19 @@ p {
 
 /* ------------------ Small Screens */
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .level-subheading {
+        text-align: center;
+        color: #f1a906;
+        font-size: 2.3rem;
+        margin-bottom: 0;
+    }
+
+    .level-text-content {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
 
 /* ------------------ XS Screens */
 @media screen and (max-width: 576px) {}
