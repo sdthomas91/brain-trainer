@@ -42,7 +42,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 - #### Typography
 
   - The Kavoon font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Kavoon provides a fun, game style font whilst maintaining a good level of readability for accessibility purposes.
-  - Additional typography where needed (game instructions etc.) will be a simple Sans Serif font such as Arial.
+  - Additional typography where needed (game instructions etc.) will be a simple Sans Serif font such as Verdana.
 
 - #### Imagery
 
