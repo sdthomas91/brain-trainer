@@ -260,3 +260,81 @@ p {
 @media screen and (min-width: 993px) {}
 
 @media screen and (min-width: 1200px) {}
+
+/* Trial Code */
+/* Trial code */
+
+.game-container {
+    text-align: center;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 10px;
+    max-width: 220px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border: 1px solid #ccc;
+}
+
+.card-back {
+    background-color: #fff;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+#timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#timer {
+    margin: 0;
+}
+
+#best-time {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#reset-button {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+}
