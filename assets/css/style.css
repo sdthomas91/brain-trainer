@@ -7,7 +7,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b0066", endColorstr="#b26115", GradientType=1);
     background-position: fixed;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
 }
 
 h1,
@@ -122,7 +122,6 @@ p {
     width: 150px;
     height: 150px;
     padding: 10px;
-    margin: 20px 0;
 }
 
 .tile-content {
@@ -189,87 +188,15 @@ p {
 
 /* ------Level Content------ */
 
-.level-heading {
-    text-align: center;
-    color: #f1a906;
-    font-size: 3rem;
-}
-
-.level-subheading {
-    text-align: left;
-    color: #f1a906;
-    font-size: 2rem;
-}
-
-#timer {
-    margin-top: 15px;
-    color: white;
-}
-
-.level-text-content {
-    text-align: left;
-    font-size: 1.8rem;
-    color: white;
-}
-
-.level-text-lg {
-    padding-top: 50px;
-}
-
-/* ------Media Queries------ */
-
-/* ------------------ Medium Screens */
-
-@media screen and (max-width: 992px) {
-    .leader-list {
-        margin-left: 0px;
-    }
-
-    .nav-icon {
-        font-size: 1.4rem;
-        margin-right: 10px;
-    }
-
-}
-
-/* ------------------ Small Screens */
-
-@media screen and (max-width: 768px) {
-    .level-subheading {
-        text-align: center;
-        color: #f1a906;
-        font-size: 2.3rem;
-        margin-bottom: 0;
-    }
-
-    .level-text-content {
-        text-align: center;
-        font-size: 1.8rem;
-    }
-}
-
-/* ------------------ XS Screens */
-@media screen and (max-width: 576px) {}
-
-/* ------------------ XXS Screens */
-@media screen and (max-width: 417px) {}
-
-/*-------------------------Min-Width Media Queries */
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 993px) {}
-
-@media screen and (min-width: 1200px) {}
-
-/* Trial Code */
-/* Trial code */
-
+/* --Game Container -- */
 .game-container {
     text-align: center;
 }
 
 .memory-game {
     display: grid;
+    /* Grid CSS used as bootstrap was having responsive issues - trialled in codepen and worked best though caused some issues with spacing. 
+    Amended by using Bootstrap col method in HTML and further styling in CSS*/
     grid-template-columns: repeat(2, 100px);
     grid-template-rows: repeat(2, 100px);
     grid-gap: 10px;
@@ -278,6 +205,9 @@ p {
     text-align: center;
 }
 
+/* --/game container-- */
+
+/* --Cards--  Initial code found -  https: //www.w3schools.com/howto/howto_css_flip_card.asp - developed using codepen */
 .card {
     width: 100px;
     height: 100px;
@@ -314,6 +244,37 @@ p {
     transform: rotateY(180deg);
 }
 
+/* --/cards-- */
+
+/* --Level Content-- */
+.level-heading {
+    text-align: center;
+    color: #f1a906;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.level-subheading {
+    text-align: left;
+    color: #f1a906;
+    font-size: 2rem;
+}
+
+#timer {
+    margin-top: 15px;
+    color: white;
+}
+
+.level-text-content {
+    text-align: left;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.level-text-lg {
+    padding-top: 50px;
+}
+
 #timer-container {
     display: flex;
     justify-content: center;
@@ -330,7 +291,7 @@ p {
     display: block;
     text-align: center;
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 1.5rem;
 }
 
 #reset-button {
@@ -338,3 +299,56 @@ p {
     margin: 10px auto;
     font-size: 16px;
 }
+
+/* --/level content */
+
+/* ------Media Queries------ */
+
+/* ------------------ Medium Screens */
+
+@media screen and (max-width: 992px) {
+    .leader-list {
+        margin-left: 0px;
+    }
+
+    .nav-icon {
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    .level-subheading {
+        text-align: center;
+        color: #f1a906;
+        font-size: 2.3rem;
+        margin-bottom: 0;
+    }
+
+    .level-text-content {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+}
+
+/* ------------------ Small Screens */
+
+@media screen and (max-width: 768px) {}
+
+/* ------------------ XS Screens */
+@media screen and (max-width: 576px) {}
+
+/* ------------------ XXS Screens */
+@media screen and (max-width: 417px) {}
+
+/*-------------------------Min-Width Media Queries */
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 993px) {
+    #best-time {
+        display: block;
+        text-align: left;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {}

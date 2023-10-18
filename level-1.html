@@ -108,7 +108,7 @@
     <!-- Game Tiles -->
     <div class="container">
       <div class="row game-container">
-        <div class="col-2 d-none d-md-flex">
+        <div class="col-2 col-md-4 d-flex">
           <div class="d-none d-lg-flex row container-fluid">
             <div class="col-12 best-time-count level-text-lg">
               <h2 class="level-subheading shadow-text">Best Time</h2>
@@ -118,7 +118,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 d-flex justify-content-center level-tile">
+        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
           <!-- Card Structure Left -->
           <div class="card" data-card="1">
             <div class="card-inner">
@@ -147,7 +147,7 @@
             />
           </div> -->
         </div>
-        <div class="col-6 col-md-4 d-flex justify-content-center level-tile">
+        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
           <!-- Card Structure Right -->
           <div class="card" data-card="2">
             <div class="card-inner">
@@ -167,16 +167,9 @@
             </div>
           </div>
           <!-- /Card Structure Right -->
-          <!-- <div class="right-tile shadow-tile">
-            <img
-              src="assets/images/mobile-logo.png"
-              alt="Card with image on"
-              style="width: 100%"
-            />
-          </div> -->
         </div>
-        <div class="col-2 d-none d-md-flex"></div>
-        <div class="col-2 d-none d-md-flex">
+        <div class="col-2 col-md-4 d-flex"></div>
+        <div class="col-2 col-md-4 d-flex">
           <div class="d-none d-lg-flex row container-fluid">
             <div class="col-12 attempt-count level-text-lg">
               <h2 class="level-subheading shadow-text">Attempts</h2>
@@ -185,7 +178,7 @@
           </div>
         </div>
         <div
-          class="col-6 col-md-4 d-flex justify-content-center level-tile locked-level"
+          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
         >
           <!-- Card Structure Left -->
           <div class="card" data-card="1">
@@ -215,7 +208,7 @@
           </div> -->
         </div>
         <div
-          class="col-6 col-md-4 d-flex justify-content-center level-tile locked-level"
+          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
         >
           <!-- Card Structure Right -->
           <div class="card" data-card="2">
@@ -244,10 +237,11 @@
             />
           </div> -->
         </div>
-        <div class="col-2 d-none d-md-flex"></div>
+        <div class="col-2 col-md-4 d-flex"></div>
       </div>
     </div>
     <!-- /Game Tiles -->
+
     <!-- Timer -->
     <div class="row container-fluid">
       <div class="col-12">
@@ -255,7 +249,8 @@
       </div>
     </div>
     <!-- /Timer -->
-    <!---- Footer -->
+
+    <!-- Medium Screen Info -->
     <div class="d-lg-none row container-fluid">
       <div class="col-12 best-time-count">
         <h2 class="level-subheading shadow-text">Best Time</h2>
@@ -268,7 +263,10 @@
         <p id="attempts" class="level-text-content shadow-text">0</p>
       </div>
     </div>
-    <!-- /Footer -->
+    <!-- /Medium Screen Info -->
+    <!-- Reset Button -->
+    <button id="reset-button">Reset Game</button>
+    <!-- /Reset Buttom -->
     <script src="assets/js/script.js"></script>
     <!-- BootStrap Scripts -->
     <script
