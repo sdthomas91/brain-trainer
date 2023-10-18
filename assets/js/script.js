@@ -11,6 +11,7 @@ const cards = document.querySelectorAll('.card');
 //Shuffle the cards using cards array
 function shuffleCards() {
     cards.forEach(card => {
+        // Using Math.random to generate random positions for each card
         let randomPos = Math.floor(Math.random() * cards.length);
         card.style.order = randomPos;
     });
