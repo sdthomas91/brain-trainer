@@ -116,12 +116,13 @@ p {
 
 /* ------Homepage Tiles------ */
 
-.level-tile {
+.progress-tile {
     background: none;
     color: #4b0066;
     width: 150px;
     height: 150px;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .tile-content {
@@ -156,6 +157,13 @@ p {
 }
 
 /* ------Game Tiles------ */
+.level-tile {
+    background: none;
+    color: #4b0066;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
 
 .right-tile,
 .left-tile {
