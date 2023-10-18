@@ -113,6 +113,35 @@ p {
     color: white;
 }
 
+/* ------Modals------ */
+
+.modal-text {
+    font-family: "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+.btn-navi {
+    background: none;
+    font-family: Kavoon, Arial, Sans-serif;
+    color: #fcfcfc;
+}
+
+
+/* .btn-navi:hover,
+.btn-navi:active,
+.btn-navi:focus,
+.btn-navi:active:focus {
+    color: #f47d15;
+    font-size: 1.1rem;
+} */
+
+.btn-close {
+    background: #4B0066;
+    color: #fcfcfc;
+    font-family: Kavoon, Arial, sans-serif;
+}
 
 /* ------Homepage Tiles------ */
 
