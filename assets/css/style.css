@@ -118,7 +118,7 @@ p {
 
 .level-tile {
     background: none;
-    color: #f47d15;
+    color: #4b0066;
     width: 150px;
     height: 150px;
     padding: 10px;
@@ -144,14 +144,14 @@ p {
 }
 
 .level-link {
-    color: #f47d15;
+    color: #4b0066;
 }
 
 .level-link:hover,
 .level-link:active,
 .level-link:focus,
 .level-link:active:focus {
-    color: #b65501;
+    color: #f47d15;
     font-size: 2.8rem;
     text-decoration: none;
 }

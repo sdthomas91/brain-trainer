@@ -4,7 +4,9 @@
 
 This is a brain training memory game that allows users to progress through increasingly difficult flip card memory challenges. It is designed to be responsive across all devices and will contain a high score and timer section to enable users to continuall improve.
 
-Utilising Bootstrap row/column tool the site will present responsively and in a well structured, readable, easy to navigate way so as to allow maximum UX. With the use of Javascript the web app will provide a visually appealing and mentally challenging, yet fun and interactive game. 
+Utilising Bootstrap row/column tool the site will present responsively and in a well structured, readable, easy to navigate way so as to allow maximum UX. With the use of Javascript the web app will provide a visually appealing and mentally challenging, yet fun and interactive game.
+
+With the use of Jest I will continuously test my code with the red green refactor method to ensure that each function is built in the most efficient way and to avoid future bugs,
 
 <h2 align="center"><img src="/assets/images/bt-mockup.png"></h2>
 
@@ -14,78 +16,71 @@ Utilising Bootstrap row/column tool the site will present responsively and in a 
 
 - #### First Time Visitor Goals
 
-    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the practitioner/organisation.
-    2. As a First Time Visitor, I want to be able to easily locate an option to contact or book in.
-    3. As a First Time Visitor, I want to be able to easily navigate throughout the site to understand pricing and details of different services
-    4. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+    1. As a First Time Visitor, I want to easily understand the main purpose of the game and understand how to play.
+    2. As a First Time Visitor, I want to be able to easily navigate the game and start a game with ease.
+    3. As a First Time Visitor, I want to be able to easily understand what will happen when I interact with areas of the site
 
 - #### Returning Visitor Goals
 
-    1. As a Returning Visitor, I want to find new or existing services.
-    2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-    3. As a Returning Visitor, I want to find Community/Social links.
+    1. As a Returning Visitor, I want to see if there are new levels available.
+    2. As a Returning Visitor, I want to check my previous scores.
 
 - #### Frequent User Goals
 
-    1. As a Frequent User, I want to be able to easily book my favourite services.
-    2. As a Frequent User, I want to check to see if there are any new results images to see work/improvements.
-    3. As a Frequent User, I want to have easy contact options to discuss my bookings.
+    1. As a Frequent User, I want to be able to continuously improve upon my previous score.
+    2. As a Frequent User, I want to be able to progress.
 
 - ### Design
 
 - #### Colour Scheme
 
-    - The three main colours used are #eab29d (Accent), #e6a288 (Interaction Feedback on Accent Colour), #3c2c2a (Dark) and off-white #fffcfa (Light) .
+  - The three main colours used are #f47d15 (Interaction Feedback), #4b0066 (Main Colour), #f1a906 (Secondary colour - headings etc.) and off-white #f9f9f9 (Light).
+  - All colours tested on WebAIM Contrast Checker - some changes were made, including making #4b0066 the main colour due to it's good contrast with all other colours.
 
     <img src="assets/images/colour-palette.png">
 
 - #### Typography
 
-    - The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
-    - Additional typography will include Source Sans Pro as a nice pairing for Montserrat recommended [here](https://www.figma.com/google-fonts/montserrat-font-pairings/). It is a modern sans-serif font that provides a minimalist and readable text.
-    - An additiona font of Merriweather from Google fonts will be used for small and copyright text - a clean modern serif font maintaining class and readability.
-
-    <img src="assets/images/font-pairing.png">
+  - The Kavoon font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Kavoon provides a fun, game style font whilst maintaining a good level of readability for accessibility purposes.
+  - Additional typography where needed (game instructions etc.) will be a simple Sans Serif font such as Arial.
 
 - #### Imagery
 
-    - Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
-    - The image of the technician provides a face, building trust between the user and the site owner
-    - Stock images are used for the services provided to ensure high quality, professional appearance. Again reinforcing trust between user and owner.
+  - All images used will be credited - main logo and card front created by myself.
 
 - #### Interaction Feedback
 
-    - Accent colours are used upon interaction such as hover and click to provide feedback to the user that they are interacting with an element, and that the element serves a purpose. Examples include button hover changing from the primary #eab29d to a deeper #e6a288 and the nav items changing from a light grey to a dark grey.
+  - Accent colours are used upon interaction such as hover and click to provide feedback to the user that they are interacting with an element, and that the element serves a purpose.
+  - Sound effects are used to enhance the game experience on flipping, correct match, incorrect match and game completion.
+  - Animation used for the card flip to give it a realistic feel rather than just flicking from one image to the next. Makes the game feel better quality and more enjoyable/pleasant to play.
 
 ## Wireframes
 
-- Main Page Wireframe - [View](https://www.figma.com/file/0p1Nlz6Kia954xdU5fe7HX/NG-spmu-wireframe?type=design&node-id=0%3A1&t=dXZ1j4cKAh2razPm-1)
-
-- Newsletter Modal Wireframe - [View](https://www.figma.com/file/6WPw1s4hxmiNXuZN8FP4b0/Untitled?type=design&node-id=0%3A1&t=irnY2dMoasWcrNAW-1)
+- All basic wireframes can be found here - [View](https://www.figma.com/file/zAQX9o6OAKkXcJyxj9RKId/BrainTrainer-Wireframe?type=design&node-id=0-1&mode=design)
 
 ### Deviations
 
-  It should be noted that whilst the wireframes were implemented as part of the skeleton phase of UX planning at the outset, applying that 5 S's throughout led to some important amendments to increase functionality. I also realised that having originally planned for a newsletter modal, this did not fit in with the scope of the project. Instead, I have amended to use a book now modal, following feedback from a number of users. This provides an immediate and accessible option to submit a booking enquiry (in the place of a booking system, as that, too fell outside of the scope of this project)
+  It should be noted that whilst the wireframes were implemented as part of the skeleton phase of UX planning at the outset, applying that 5 S's throughout led to some important amendments to increase functionality. I also realised that having originally planned for multiple levels, this was going to impact timeframes and mean the quality of the work may suffer. Further levels could be added as a later version, but for the scope and timeframe of this project I decided to stick with one level, with the interaction feedback explaining as much (prompts when clicking on locked levels etc.)
 
 ## Features
 
 - Responsive on all device sizes
 
-- Interactive elements
+- Advanced Javascript providing a smooth interactive gaming experience
 
-- Modal features for seamless single page functionality
+- Ability to progress and improve by competing against your own time
 
-- Section ID's allow for anchor links in Nav to provide a seamless navigation
+- ID's used in order to access DOM and manipulate date
 
-- Fixed navigation to allow easy navigation of single scroll page
+- Modals used to instructions to avoid unncessary navigation away from the main page
 
-- Back to top button allows quick navigation of single scroll page
+- Tiles used to illustrate a clear journey through levels etc.
 
-- Interaction feedback used throughout - this includes all clickable buttons/links, back to top button, navigational elements and social media icons. It included font size increasing, font colour changing, background and foreground colours changing or a combination of the three.
+- Interaction feedback used throughout - this includes all clickable buttons/links, cards, sound effects, animations.
 
 ### User Feedback Implementations
 
-  - A number of users fedback that they would prefer to have an immediate option to submit a booking enquiry rather than scroll to a generic contact form (the navigation could take them there, but "it still felt too generic") As such, I implemented a second modal with the purpose of submitting a booking request. It includes prompts, user feedback and notification that it could take up to 48 hours for a response so as to set user expectations.
+- A number of users fedback that they would prefer to have an immediate option to submit a booking enquiry rather than scroll to a generic contact form (the navigation could take them there, but "it still felt too generic") As such, I implemented a second modal with the purpose of submitting a booking request. It includes prompts, user feedback and notification that it could take up to 48 hours for a response so as to set user expectations.
 
 ## Technologies Used
 
@@ -93,45 +88,47 @@ Utilising Bootstrap row/column tool the site will present responsively and in a 
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
    - Bootstrap was used to assist with the responsiveness and styling of the website.
-1. [Hover.css:](https://ianlunn.github.io/Hover/)
+2. [Jest](https://jestjs.io/)
+   - Jest was used to continuously test and grow my code and functions
+3. [Hover.css:](https://ianlunn.github.io/Hover/)
    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
-1. [Google Fonts:](https://fonts.google.com/)
-   - Google fonts were used to import the 'Source Sans Pro' and 'Merriweather' fonts into the style.css file which is used on all pages throughout the project.
-1. [Font Awesome:](https://fontawesome.com/)
+4. [Google Fonts:](https://fonts.google.com/)
+   - Google fonts were used to import the 'Kavoon' font into the "Head" section of each html file which is used on all pages throughout the project.
+5. [Font Awesome:](https://fontawesome.com/)
    - Font Awesome was used throughout the website to add icons for aesthetic and UX purposes.
-1. [jQuery:](https://jquery.com/)
+6. [jQuery:](https://jquery.com/)
    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
-1. [Git](https://git-scm.com/)
+7. [Git](https://git-scm.com/)
    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-1. [GitHub:](https://github.com/)
+8. [GitHub:](https://github.com/)
    - GitHub is used to store the projects code after being pushed from Git.
-1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
-   - Photoshop was used to resize images and editing photos for the website.
-1. [Illustrator:](https://www.adobe.com/uk/products/illustrator.html)
-   - Illustrator was used to create the logo and website banners.
-1. [Figma:](https://www.figma.com/)
-   - Figma was used to create the wireframes during the design process.
-1. [CSSGradient](https://cssgradient.io/)
-   - CSSGradient.io was used to generate css gradient backgrounds.
-1. [OnePageLove](https://onepagelove.com/)
-   - OnePageLove was used as inspiration for continuous scroll websites
-1. [StackOverflow](https://stackoverflow.com/)
-   - Used for code snippets and code validation
-1. [GoogleBard](bard.google.com)
-   - Used Bard AI to help generate some good copy for the website
-1. [TinyPNG](https://tinypng.com/)
-    - Used to compress images for better load speeds
-1. [CloudConvert](https://cloudconvert.com/png-to-jpg)
-   - Used to convert images to WebP and JPG for better load speed
+9. [Illustrator:](https://www.adobe.com/uk/products/illustrator.html)
+
+- Illustrator was used to create the logo and card fronts.
+
+10. [Figma:](https://www.figma.com/)
+
+- Figma was used to create the wireframes during the design process.
+
+11. [CSSGradient](https://cssgradient.io/)
+
+- CSSGradient.io was used to generate css gradient backgrounds.
+
+12. [StackOverflow](https://stackoverflow.com/)
+
+- Used for code snippets and code validation
 
 ## Testing
 
-A separate Markdown document has been added to showcase code/UI/UX testing throughout and can be found [here] (<https://github.com/sdthomas91/ng-spmu-milestone/blob/main/TESTING.md>)
+A separate tests document has been added to showcase the Javascript testing - this can be found in the scripts directory.
+
+- Little to no HTML CSS testing was required due to the simplicity of the web pages - still validated through W3C validator as listed below.
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
@@ -217,8 +214,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ##### Load Speed
 
-- Original load speed was in the 53 out of 100 on mobile and 79 out of 100 on desktop.
-- Amended to be JPG instead of PNG as fallback - this increased performance to 92 out of 100 for dekstop and 80 out of 100 for mobile.
+-
 
 ##### Accessibility
 
@@ -232,7 +228,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Known Bugs
 
-- A comprehensive list of bugs and resolutions can be found in the TESTING.md file
+- No known bugs remain - game.test.js can be used to explore the different tests that were run following a red, green, refactor system.
 
 ## Deployment
 
@@ -288,21 +284,17 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
-- [W3CSchools](https://www.w3schools.com/) W3C schools used to reinforce CSS understanding
+- [W3CSchools](https://www.w3schools.com/) W3C schools used for CSS/HTML confirmation
 
 - [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
-- [StackOverflow](https://stackoverflow.com/) : For coding validation and tips on refining code. Also used for code snippets customised with my own css.
+- [StackOverflow](https://stackoverflow.com/) : For coding validation and tips on refining code. Also used for code snippets customised with my own css or JS.
 
-- [BootStrap Pricing](https://getbootstrap.com/docs/4.0/examples/pricing/#) : Used bootstrap template for pricing structure as it provides a nice clean setup - will completely restyle but saved a lot of time on setting up the blocks
-
-- [Sitepoint](https://www.sitepoint.com/community/t/center-text-and-container-inside-a-circle/102963/2) : thread found on sitepoint helped to refresh how to center vertically and horizontally
-
-- [CSS Tricks](https://css-tricks.com/using-webp-images) : Used to better understand the use of WebP and fallback JPG for a smoother/faster page load
+- [CodePen](https://codepen.io/samueldthomas91/pen/oNJVxYx) : Codepen was used to explore examples of the game style I wanted to implement. I also used codepen to build my JS logic as it was easier to view and edit. My final codepen before transferring it back to codeanywhere can be found [HERE](https://codepen.io/samueldthomas91/pen/OJrKNgP)
 
 ### Content
 
-- Google Bard AI was used to generate around 50% of the website copy
+- Colour and content completely designed by myself
 
 - Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
@@ -310,26 +302,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
-- Some Images were created or photographed by the developer - these include the Logo and the hero image.
-
-#### Technician Image
-
-- Technician image on home page - <a href="https://www.freepik.com/free-photo/woman-visiting-cosmetologist-making-rejuvenation-procedures_12178265.htm#query=beautician%20in%20salon&position=3&from_view=search&track=ais">Image by senivpetro</a> on Freepik
-
-#### Services images
-
-- Lip blush image - [Lip blush image used](https://www.canva.com/) Canva Pro - contributor @as-images237234231
-- Eyeliner image - [Eyeliner image used](https://www.canva.com/) Canva pro - Getty Images - Contributor Luda311
-- Microblading image - [Microblading image used](https://www.canva.com/) Canva pro - Getty Images Pro - Contributor MilanMarkovic
-
-#### Results images for gallery
-
-- Lips-1 : [Lip Image Result Lips1](https://www.canva.com) - Canva Pro - contributor @africa-images
-- Lips-2 : [Lip Result Lips2](https://www.canva.com) - Canva pro - Getty Images - Contributor puhhha
-- Brows-1 : [Brow Result Brows1](https://www.canva.com) - Canva pro - Getty Images - Contributor puhhha
-- Brows-2 : [Brow Result Brows2](https://www.canva.com) - Canva pro - Getty Images - Contributor puhhha
-- Brows-3 : [Brow Result Brows3](https://www.canva.com) - Canva pro - Getty Images - Contributor CherriesJD
-- Brows-5 : [Brow Result Brows5](https://www.canva.com) - Canva pro - Getty Images - Contributor HDesert
+- All media was created by myself including card images
 
 #### README Mockup
 
@@ -341,6 +314,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - Pasquale Fasulo for continuous helpful input and feedback
 
-- ByteGrad Tips on YouTube for helpful tips on utilising bootstrap additional capabilities
+- My mentor, Gurjot for continued input and direction
+
+- © 2014 Nate Wiley CodePen for the initial inspiration
 
 - Friends and family for valuable insights and feedback
