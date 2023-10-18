@@ -77,20 +77,36 @@
 
           <ul class="navbar-nav">
             <li class="nav-item nav-icon-text list-icon">
-              <a class="nav-link" href="#"
-                ><i
-                  class="d-inline d-lg-block fa-solid fa-circle-info nav-icon shadow-text"
-                ></i
-                >How To Play</a
-              >
+              <a class="nav-link" href="#">
+                <!-- How To Play Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                <button
+                  type="button"
+                  class="btn btn-navi"
+                  data-toggle="modal"
+                  data-target="#howToModal"
+                >
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-circle-info nav-icon shadow-text"
+                  ></i
+                  >How To Play
+                </button>
+              </a>
             </li>
             <li class="nav-item nav-icon-text list-icon">
-              <a class="nav-link" href="#"
-                ><i
-                  class="d-inline d-lg-block fa-solid fa-circle-question nav-icon shadow-text"
-                ></i
-                >Help</a
-              >
+              <a class="nav-link" href="#">
+                <!-- Help Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                <button
+                  type="button"
+                  class="btn btn-navi"
+                  data-toggle="modal"
+                  data-target="#helpModal"
+                >
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-circle-question nav-icon shadow-text"
+                  ></i
+                  >Help
+                </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -98,6 +114,142 @@
     </div>
     <!-- /Navigation -->
     <!-- /Header -->
+    <!-- MODALS -->
+    <!-- How To Play Modal -->
+    <div
+      class="modal fade"
+      id="howToModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="howToModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">How To Play!</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">
+              Welcome to the BrainTrainer Flip Card Memory Game! This classic
+              game is a fantastic way to challenge your memory skills and have
+              fun at the same time. Here's how to get started:
+            </p>
+
+            <h3>Basic Gameplay:</h3>
+            <ol class="modal-text">
+              <li>
+                <strong>Set Up:</strong> Lay out an even number of cards face
+                down in a grid. Ensure that each card has a matching pair.
+              </li>
+              <li>
+                <strong>Game Objective:</strong> The goal is to find all the
+                matching pairs by flipping two cards at a time. Matched pairs
+                are removed from the grid.
+              </li>
+              <li>
+                <strong>Taking Turns:</strong> Players take turns flipping two
+                cards at a time, trying to remember the positions of the cards
+                to make matches.
+              </li>
+              <li>
+                <strong> Memory Challenge:</strong> The game tests your memory,
+                as you'll need to remember the positions of previously revealed
+                cards to make successful matches.
+              </li>
+              <li>
+                <strong>Winning:</strong> The game is won when all pairs are
+                successfully matched and removed from the grid.
+              </li>
+            </ol>
+            <h3>Using the Reset Button:</h3>
+            <ul class="modal-text">
+              <li>
+                <strong>Resetting the Game: </strong> If you want to start over,
+                simply hit the "Reset" button. This will rearrange the cards and
+                reset the game grid, allowing you to have a fresh start and a
+                new challenge.
+              </li>
+            </ul>
+
+            <h3>Competing Against Your Own Time:</h3>
+            <ul class="modal-text">
+              <li>
+                <strong>Time Challenge: </strong> Try to beat your previous
+                time! Record the time it takes you to finish the game and
+                challenge yourself to complete it in a shorter duration with
+                each new attempt.
+              </li>
+              <li>
+                <strong>Improving Memory: </strong> By competing against your
+                own time, you'll not only enhance your memory skills but also
+                improve your cognitive abilities, making the game both
+                entertaining and beneficial for your mind.
+              </li>
+            </ul>
+            <p class="modal-text">
+              Remember, the key to success in this game is concentration and a
+              sharp memory. Have fun and challenge yourself to beat your own
+              records!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /How To Play Modal -->
+    <!-- Help Modal -->
+    <div
+      class="modal fade"
+      id="helpModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="helpModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Need Help?</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">
+              If you have noticed any bugs or you are having issues with the
+              gameplay, please get in touch by
+              <a href="mailto:info@braintrainer.co.uk"> email</a>. We appreciate
+              your feedback!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Help Modal -->
+    <!-- /MODALS -->
     <!-- Level Title -->
     <div class="row">
       <div class="col-12">
