@@ -127,15 +127,6 @@ p {
     color: #fcfcfc;
 }
 
-
-/* .btn-navi:hover,
-.btn-navi:active,
-.btn-navi:focus,
-.btn-navi:active:focus {
-    color: #f47d15;
-    font-size: 1.1rem;
-} */
-
 .btn-close {
     background: #4B0066;
     color: #fcfcfc;
@@ -342,9 +333,12 @@ p {
     font-size: 1.5rem;
     font-family: Kavoon, Arial, sans-serif;
     color: #4b0066;
+    /* margin-bottom: 350px; */
 }
 
-
+.level-container {
+    height: 100vh;
+}
 /* --/level content */
 
 /* ------Media Queries------ */
