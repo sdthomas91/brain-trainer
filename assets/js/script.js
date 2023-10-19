@@ -1,6 +1,13 @@
+// Gobal variables required - tried to use minimal global vars but needs must
+let hasFlippedCard = false;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
+
+// Add a reset button in case someone wants to start again
+const resetButton = document.getElementById('reset-button');
+// Event listener used for button click - need to link to resetGame function
+resetButton.addEventListener('click', resetGame);
 
 function flipCard() {
   if (this === firstCard) return;
@@ -41,6 +48,7 @@ function unflipCards() {
 function resetBoard() {
 
 };
+
 
 function resetGame() {
 
