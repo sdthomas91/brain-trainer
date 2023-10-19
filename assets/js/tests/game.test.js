@@ -19,10 +19,21 @@ describe('Memory Game Functions', () => {
          shuffleCards(cards);
          // Get post-shuffle order
          const shuffledOrders = cards.map(card => card.style.order);
-        //  Expect statement
-        expect(shuffledOrders).not.toEqual(initialOrders);
+        // Custom comparison logic for randomness
+        let isDifferent = false;
+        for (let i = 0; i < initialOrders.length; i++) {
+            if (initialOrders[i] !== shuffledOrders[i]) {
+                isDifferent = true;
+                break;
+            }
+        }
+
+        // Expect statement
+        expect(isDifferent).toBe(true);
 
         // RGR - Initial test failed due to the shuffle being random to the extent that it could end up with the same order as the previous shuffle - especially as it's such a short value.
-        // Changes made to shuffle function and retested 
+        // Changes made to shuffle function and retested - changed logic in shuffle function using 
+        // similar logic to https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
     });
 });
