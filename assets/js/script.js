@@ -1,17 +1,59 @@
 
-
-// Start Game Function
-const startGame = function () {
-    // When first tile is clicked
-};
-
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
 function flipCard() {
   if (this === firstCard) return;
+    
+//   Whenever a card is clicked - add class to make it a flipped card and display card back
+  this.classList.add('card-flipped');
 
+//   Logic to ensure that a flipped card cannot be treated as an unflipped card
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+
+//  Start timer on first card click 
+    if (!timerStarted) {
+    //   function to start timer
+    
+    // when first card is flipped, switch timer to start  
+    timerStarted = true;
+    }
+  } else {
+    secondCard = this;
+    // Function to check fo match
+  }
 }
+
+function checkForMatch() {
+
+};
+
+function disableCards() {
+
+};
+
+function unflipCards() {
+
+};
+
+function resetBoard() {
+
+};
+
+function resetGame() {
+
+};
+
+function startTimer() {
+
+};
+
+function stopTimer() {
+
+};
+
 
 //Shuffle the cards using cards array
 function shuffleCards() {
