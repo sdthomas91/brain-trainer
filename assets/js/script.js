@@ -4,10 +4,10 @@ let hasFlippedCard = false;
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
-// Add a reset button in case someone wants to start again
-const resetButton = document.getElementById('reset-button');
-// Event listener used for button click - need to link to resetGame function
-resetButton.addEventListener('click', resetGame);
+// // Add a reset button in case someone wants to start again
+// const resetButton = document.getElementById('reset-button');
+// // // // Event listener used for button click - need to link to resetGame function
+// resetButton.addEventListener('click', resetGame);
 
 function flipCard() {
   if (this === firstCard) return;
@@ -72,4 +72,10 @@ function shuffleCards() {
     });
 }
 
-shuffleCards(); // Shuffle cards on game load - including automatic reset after completion 
+
+shuffleCards(cards); // Shuffle cards on game load - including automatic reset after completion 
+
+// Export Functions 
+module.exports = {
+    shuffleCards,
+};

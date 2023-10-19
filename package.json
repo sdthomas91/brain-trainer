@@ -1,0 +1,23 @@
+{
+  "name": "brain-trainer",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">BrainTrainer - The Memory Game</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdthomas91/brain-trainer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdthomas91/brain-trainer/issues"
+  },
+  "homepage": "https://github.com/sdthomas91/brain-trainer#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
