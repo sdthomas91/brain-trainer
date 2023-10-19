@@ -5,8 +5,13 @@ const startGame = function () {
     // When first tile is clicked
 };
 
-//Generate card areay for use throughout 
+//Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
+
+function flipCard() {
+  if (this === firstCard) return;
+
+}
 
 //Shuffle the cards using cards array
 function shuffleCards() {
@@ -17,4 +22,4 @@ function shuffleCards() {
     });
 }
 
-shuffleCards(); // Shuffle cards on game load - including automstic reset after completion 
+shuffleCards(); // Shuffle cards on game load - including automatic reset after completion 
