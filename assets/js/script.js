@@ -1,5 +1,7 @@
 // Gobal variables required - tried to use minimal global vars but needs must
 let hasFlippedCard = false;
+let firstCard = null;
+let secondCard = null;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -20,13 +22,13 @@ function flipCard() {
         hasFlippedCard = true;
         firstCard = this;
 
-        //  Start timer on first card click 
-        if (!timerStarted) {
-            //   function to start timer
+        // //  Start timer on first card click 
+        // if (!timerStarted) {
+        //     //   function to start timer
 
-            // when first card is flipped, switch timer to start  
-            timerStarted = true;
-        }
+        //     // when first card is flipped, switch timer to start  
+        //     timerStarted = true;
+        // }
     } else {
         secondCard = this;
         // Function to check fo match

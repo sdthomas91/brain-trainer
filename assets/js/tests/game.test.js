@@ -24,7 +24,13 @@ describe('Memory Game Functions', () => {
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
     });
-    
+
+
+    test('flipCard should flip the selected card', () => {
+        flipCard.call(mockCard1);
+        expect(mockCard1.classList.add).toHaveBeenCalledWith('card-flipped');
+    });
+
     // Shuffle Cards Test (including steps taken as first test written)
     test('shuffleCards should shuffle the cards randomly', () => {
         // Run test to ensure order before shuffling does not match order after shuffling
