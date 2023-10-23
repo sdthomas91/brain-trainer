@@ -10,27 +10,27 @@ const cards = document.querySelectorAll('.card');
 // resetButton.addEventListener('click', resetGame);
 
 function flipCard() {
-  if (this === firstCard) return;
-    
-//   Whenever a card is clicked - add class to make it a flipped card and display card back
-  this.classList.add('card-flipped');
+    if (this === firstCard) return;
 
-//   Logic to ensure that a flipped card cannot be treated as an unflipped card
-  if (!hasFlippedCard) {
-    hasFlippedCard = true;
-    firstCard = this;
+    //   Whenever a card is clicked - add class to make it a flipped card and display card back
+    this.classList.add('card-flipped');
 
-//  Start timer on first card click 
-    if (!timerStarted) {
-    //   function to start timer
-    
-    // when first card is flipped, switch timer to start  
-    timerStarted = true;
+    //   Logic to ensure that a flipped card cannot be treated as an unflipped card
+    if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+
+        //  Start timer on first card click 
+        if (!timerStarted) {
+            //   function to start timer
+
+            // when first card is flipped, switch timer to start  
+            timerStarted = true;
+        }
+    } else {
+        secondCard = this;
+        // Function to check fo match
     }
-  } else {
-    secondCard = this;
-    // Function to check fo match
-  }
 }
 
 function checkForMatch() {
@@ -90,4 +90,5 @@ shuffleCards(cards); // Shuffle cards on game load - including automatic reset a
 // Export Functions 
 module.exports = {
     shuffleCards,
+    flipCard,
 };

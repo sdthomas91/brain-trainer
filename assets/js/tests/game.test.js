@@ -5,7 +5,15 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards } = require('../script');
+const { shuffleCards, flipCard } = require('../script');
+
+beforeAll(() => {
+    let fs = require("fs");
+    let fileContents = fs.readFileSync("level-1.html", "utf-8");
+    document.open();
+    document.write(fileContents);
+    document.close();
+});
 
 describe('Memory Game Functions', () => {
     // Shuffle Cards Test (including steps taken as first test written)
@@ -14,11 +22,11 @@ describe('Memory Game Functions', () => {
         // Generate mock array 
         const cards = Array.from({ length: 10 }, (_, index) => ({ style: { order: index } }));
         // Get pre-shuffle order
-         const initialOrders = cards.map(card => card.style.order);
+        const initialOrders = cards.map(card => card.style.order);
         // Shuffle cards
-         shuffleCards(cards);
-         // Get post-shuffle order
-         const shuffledOrders = cards.map(card => card.style.order);
+        shuffleCards(cards);
+        // Get post-shuffle order
+        const shuffledOrders = cards.map(card => card.style.order);
         // Custom comparison logic for randomness
         let isDifferent = false;
         for (let i = 0; i < initialOrders.length; i++) {
