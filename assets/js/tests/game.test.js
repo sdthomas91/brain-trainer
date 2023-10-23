@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard } = require('../script');
+const { shuffleCards, flipCard, startTimer } = require('../script');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -29,6 +29,14 @@ describe('Memory Game Functions', () => {
     test('flipCard should flip the selected card', () => {
         flipCard.call(mockCard1);
         expect(mockCard1.classList.add).toHaveBeenCalledWith('card-flipped');
+    });
+
+    test('startTimer should start the game timer', () => {
+        // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)
+        jest.useFakeTimers();
+        startTimer();
+        jest.advanceTimersByTime(3000); // advance the timer by 3000 ms
+        expect(setInterval).toHaveBeenCalled();
     });
 
     // Shuffle Cards Test (including steps taken as first test written)

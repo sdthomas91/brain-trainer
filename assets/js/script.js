@@ -2,6 +2,11 @@
 let hasFlippedCard = false;
 let firstCard = null;
 let secondCard = null;
+let timerStarted = false;
+let timerInterval;
+let milliseconds = 0;
+let seconds = 0;
+let minutes = 0;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -22,13 +27,14 @@ function flipCard() {
         hasFlippedCard = true;
         firstCard = this;
 
-        // //  Start timer on first card click 
-        // if (!timerStarted) {
-        //     //   function to start timer
-
-        //     // when first card is flipped, switch timer to start  
-        //     timerStarted = true;
-        // }
+        //  Start timer on first card click 
+        if (!timerStarted) {
+            //   function to start timer
+            startTimer();
+            timerStarted = true;
+            // when first card is flipped, switch timer to start  
+            timerStarted = true;
+        }
     } else {
         secondCard = this;
         // Function to check fo match
@@ -93,4 +99,5 @@ shuffleCards(cards); // Shuffle cards on game load - including automatic reset a
 module.exports = {
     shuffleCards,
     flipCard,
+    startTimer,
 };
