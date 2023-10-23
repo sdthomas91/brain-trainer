@@ -42,6 +42,37 @@ describe('Memory Game Functions', () => {
         // method to create a mock setInterval
     });
 
+    test('should update the time variables correctly', () => {
+        let milliseconds = 0;
+        let seconds = 0;
+        let minutes = 0;
+
+        const mockCallback = jest.fn(); // Mock the callback function
+
+        const interval = setInterval(() => {
+            // Increment time variables
+            milliseconds++;
+            if (milliseconds === 100) {
+                seconds++;
+                milliseconds = 0;
+            }
+            if (seconds === 60) {
+                minutes++;
+                seconds = 0;
+            }
+
+            // Call the mock callback with the updated time values
+            mockCallback(minutes, seconds, milliseconds);
+        }, 10);
+
+        // Check the mock callback is called with the expected values
+        expect(mockCallback).toHaveBeenCalledTimes(1);
+        expect(mockCallback).toHaveBeenCalledWith(0, 0, 1);
+
+        // Clear the interval to stop the test from running indefinitely
+        clearInterval(interval);
+    });
+
     // Shuffle Cards Test (including steps taken as first test written)
     test('shuffleCards should shuffle the cards randomly', () => {
         // Run test to ensure order before shuffling does not match order after shuffling
