@@ -63,6 +63,9 @@ function resetGame() {
 };
 
 function startTimer() {
+    timerInterval = setInterval(function () {
+        milliseconds++;
+    }, 10);
 
 };
 

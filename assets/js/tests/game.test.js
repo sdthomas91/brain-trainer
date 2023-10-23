@@ -34,9 +34,12 @@ describe('Memory Game Functions', () => {
     test('startTimer should start the game timer', () => {
         // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)
         jest.useFakeTimers();
+        const setIntervalSpy = jest.spyOn(window, 'setInterval');
         startTimer();
         jest.advanceTimersByTime(3000); // advance the timer by 3000 ms
-        expect(setInterval).toHaveBeenCalled();
+        expect(setIntervalSpy).toHaveBeenCalled();
+        // expect(setInterval).toHaveBeenCalled(); - code didn't work as I didn't realise the expect cannot read native Javascript - used the Jest spyOn (https://jestjs.io/docs/jest-object#jestspyonobject-methodname
+        // method to create a mock setInterval
     });
 
     // Shuffle Cards Test (including steps taken as first test written)
