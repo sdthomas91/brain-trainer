@@ -16,6 +16,15 @@ beforeAll(() => {
 });
 
 describe('Memory Game Functions', () => {
+    let mockCard1, mockCard2, mockElement;
+
+    beforeEach(() => {
+        // Needed some mock elements to be able to properly test the flip card function - jest.fn info found here (https://jestjs.io/docs/mock-functions)
+        mockCard1 = { classList: { add: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '1') };
+        mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
+        mockElement = { textContent: '' };
+    });
+    
     // Shuffle Cards Test (including steps taken as first test written)
     test('shuffleCards should shuffle the cards randomly', () => {
         // Run test to ensure order before shuffling does not match order after shuffling
