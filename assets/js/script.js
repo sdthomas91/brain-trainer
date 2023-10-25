@@ -99,8 +99,19 @@ function startTimer() {
 }
 
 function stopTimer() {
+    clearInterval(timerInterval);
+}
 
-};
+function formatTime(minutes, seconds, milliseconds) {
+    return (
+        String(minutes).padStart(2, '0') +
+        ':' +
+        String(seconds).padStart(2, '0') +
+        ':' +
+        String(milliseconds).padStart(2, '0')
+    );
+}
+
 
 function resetGame(cards) {
     cards.forEach(card => card.addEventListener('click', flipCard));
@@ -151,4 +162,6 @@ module.exports = {
     disableCards,
     unflipCards,
     resetGame,
+    stopTimer,
+    formatTime,
 };
