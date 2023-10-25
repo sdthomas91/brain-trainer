@@ -81,6 +81,11 @@ function resetBoard() {
 
 
 function resetGame() {
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    cards.forEach(card => card.classList.remove('card-flipped'));
+    milliseconds = 0;
+    seconds = 0;
+    minutes = 0;
 
 };
 
