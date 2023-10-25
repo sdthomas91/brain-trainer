@@ -65,7 +65,6 @@ function resetGame() {
 function startTimer() {
     timerInterval = setInterval(function () {
         milliseconds++;
-        // Adding logic statements to increment the seconds and minutes
         if (milliseconds === 100) {
             seconds++;
             milliseconds = 0;
@@ -74,9 +73,9 @@ function startTimer() {
             minutes++;
             seconds = 0;
         }
-    }, 100);
-
-};
+        document.getElementById('timer').textContent = `Time: `;
+    }, 10);
+}
 
 function stopTimer() {
 
