@@ -8,6 +8,7 @@ let timerInterval;
 let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
+let cardMatches = 0;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -86,7 +87,11 @@ function resetGame() {
     milliseconds = 0;
     seconds = 0;
     minutes = 0;
-
+    cardMatches = 0;
+    timerStarted = false;
+    document.getElementById('timer').textContent = `Time: 00:00:00`;
+    clearInterval(timerInterval);
+    shuffleCards();
 };
 
 function startTimer() {
