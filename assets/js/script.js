@@ -9,7 +9,6 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
-let timerInterval;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -18,6 +17,10 @@ const cards = document.querySelectorAll('.card');
 // // const resetButton = document.getElementById('reset-button');
 // // // // // Event listener used for button click - need to link to resetGame function
 // resetButton.addEventListener('click', resetGame);
+
+
+
+
 
 function flipCard() {
     // Need a way of preventing user from flipping too many cards - lockBoard will be a boolean that will prevent user interaction whilst the game either flips/unflips
@@ -37,7 +40,6 @@ function flipCard() {
         if (!timerStarted) {
             //   function to start timer
             startTimer();
-            timerStarted = true;
             // when first card is flipped, switch timer to start  
             timerStarted = true;
         }
@@ -69,7 +71,7 @@ function disableCards() {
     // Add counter for total matches - once card matches is equal to cards.length then game is complete
     cardMatches += 2;
 
-    if(cardMatches === cards.length) {
+    if (cardMatches === cards.length) {
         setTimeout(() => {
             //include alert logging time taken to compeltep and alert player of their win
             alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
