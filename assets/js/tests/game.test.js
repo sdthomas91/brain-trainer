@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer, checkForMatch } = require('../script');
+const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards } = require('../script');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -33,8 +33,9 @@ describe('Memory Game Functions', () => {
     });
 
     test('checkForMatch should check if a correct match has been made', () => {
-        // Create mock function as disableCards logic has not yet been defined
+        // Generate mock function
         const disableCards = jest.fn();
+        const unflipCards = jest.fn();
 
         // Mock the scenario where the cards match
         mockCard1.getAttribute.mockReturnValue('1');
@@ -42,13 +43,13 @@ describe('Memory Game Functions', () => {
 
         checkForMatch.call(mockCard1);
         expect(disableCards).toHaveBeenCalled();
+        expect(unflipCards).not.toHaveBeenCalled();
 
+        disableCards.mockReset();
+        unflipCards.mockReset();
         // Mock the scenario where the cards do not match
         mockCard1.getAttribute.mockReturnValue('1');
         mockCard2.getAttribute.mockReturnValue('2');
-
-        // Create mock function as unflipCards logic has not yet been defined
-        const unflipCards = jest.fn();
 
         checkForMatch.call(mockCard1);
         expect(unflipCards).toHaveBeenCalled();

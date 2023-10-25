@@ -60,11 +60,12 @@ function checkForMatch() {
 };
 
 function disableCards() {
-
+    console.log(`I've disable the cards`)
 }
 
 function unflipCards() {
     // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
+    console.log(`I've unflipped the cards`)
     lockBoard = true;
 
     firstCard.classList.remove('card-flipped');
@@ -130,4 +131,6 @@ module.exports = {
     flipCard,
     startTimer,
     checkForMatch,
+    disableCards,
+    unflipCards,
 };
