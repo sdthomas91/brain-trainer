@@ -23,6 +23,7 @@ describe('Memory Game Functions', () => {
         mockCard1 = { classList: { add: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '1') };
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
+
     });
 
 
@@ -32,6 +33,9 @@ describe('Memory Game Functions', () => {
     });
 
     test('checkForMatch should check if a correct match has been made', () => {
+        // Create mock function as disableCards logic has not yet been defined
+        const disableCards = jest.fn();
+
         // Mock the scenario where the cards match
         mockCard1.getAttribute.mockReturnValue('1');
         mockCard2.getAttribute.mockReturnValue('1');
@@ -43,9 +47,12 @@ describe('Memory Game Functions', () => {
         mockCard1.getAttribute.mockReturnValue('1');
         mockCard2.getAttribute.mockReturnValue('2');
 
+        // Create mock function as unflipCards logic has not yet been defined
+        const unflipCards = jest.fn();
+
         checkForMatch.call(mockCard1);
         expect(unflipCards).toHaveBeenCalled();
-    })
+    });
 
     test('startTimer should start the game timer', () => {
         // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)

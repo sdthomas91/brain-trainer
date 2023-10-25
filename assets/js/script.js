@@ -48,7 +48,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    if(firstCard && secondCard) {
+    if (firstCard && secondCard) {
         const firstCardData = firstCard.getAttribute('data-card');
         const secondCardData = secondCard.getAttribute('data-card');
         // Check for match by comparingthe data-card attribute of the flipped cards
@@ -56,16 +56,20 @@ function checkForMatch() {
         // Ternary Operator used for a quick logic statement to either disable cards so they cannot be played again or unflip cards if an incorrect match is made
         isMatch ? disableCards() : unflipCards();
     }
-    
+
 };
 
 function disableCards() {
 
-};
+}
 
 function unflipCards() {
+    // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
+    lockBoard = true;
 
-};
+    firstCard.classList.remove('card-flipped');
+    secondCard.classList.remove('card-flipped');
+}
 
 function resetBoard() {
 
