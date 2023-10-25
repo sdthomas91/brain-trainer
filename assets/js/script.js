@@ -1,5 +1,6 @@
 // Gobal variables required - tried to use minimal global vars but needs must
 let hasFlippedCard = false;
+let lockBoard = false;
 let firstCard = null;
 let secondCard = null;
 let timerStarted = false;
@@ -17,6 +18,9 @@ const cards = document.querySelectorAll('.card');
 // resetButton.addEventListener('click', resetGame);
 
 function flipCard() {
+    // Need a way of preventing user from flipping too many cards - lockBoard will be a boolean that will prevent user interaction whilst the game either flips/unflips
+    // cards or is checking for a match
+    if (lockBoard) return;
     if (this === firstCard) return;
 
     //   Whenever a card is clicked - add class to make it a flipped card and display card back
@@ -38,6 +42,8 @@ function flipCard() {
     } else {
         secondCard = this;
         // Function to check fo match
+
+        checkForMatch();
     }
 }
 

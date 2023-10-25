@@ -65,7 +65,6 @@ describe('Memory Game Functions', () => {
             mockCallback(minutes, seconds, milliseconds);
         }, 10);
 
-
         // Clear the interval to stop the test from running indefinitely
         clearInterval(interval);
     });
