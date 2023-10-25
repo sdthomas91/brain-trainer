@@ -9,6 +9,7 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
+let timerInterval;
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -61,12 +62,23 @@ function checkForMatch() {
 };
 
 function disableCards() {
-    console.log(`I've disable the cards`);
+    // Take correct cards out of play but leave them as flipped cards
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    // Add counter for total matches - once card matches is equal to cards.length then game is complete
+    cardMatches += 2;
+
+    if(cardMatches === cards.length) {
+        // alert player of their win
+        alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
+        // reset game once the alert has been presented
+        resetGame();
+    }
 }
 
 function unflipCards() {
     // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
-    console.log(`I've unflipped the cards`);
     lockBoard = true;
     // Need a delay in order to show both cards before they are unflipped - will use timeout function 
     setTimeout(() => {
@@ -79,9 +91,6 @@ function unflipCards() {
 function resetBoard() {
 
 };
-
-
-
 
 function startTimer() {
     timerInterval = setInterval(function () {
@@ -113,7 +122,7 @@ function formatTime(minutes, seconds, milliseconds) {
 }
 
 
-function resetGame(cards) {
+function resetGame() {
     cards.forEach(card => card.addEventListener('click', flipCard));
     cards.forEach(card => card.classList.remove('card-flipped'));
     milliseconds = 0;
