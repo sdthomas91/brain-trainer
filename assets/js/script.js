@@ -13,9 +13,9 @@ let cardMatches = 0;
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
-// // Add a reset button in case someone wants to start again
-// const resetButton = document.getElementById('reset-button');
-// // // // Event listener used for button click - need to link to resetGame function
+// // // // Add a reset button in case someone wants to start again
+// // const resetButton = document.getElementById('reset-button');
+// // // // // Event listener used for button click - need to link to resetGame function
 // resetButton.addEventListener('click', resetGame);
 
 function flipCard() {
@@ -81,18 +81,7 @@ function resetBoard() {
 };
 
 
-function resetGame() {
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    cards.forEach(card => card.classList.remove('card-flipped'));
-    milliseconds = 0;
-    seconds = 0;
-    minutes = 0;
-    cardMatches = 0;
-    timerStarted = false;
-    document.getElementById('timer').textContent = `Time: 00:00:00`;
-    clearInterval(timerInterval);
-    shuffleCards();
-};
+
 
 function startTimer() {
     timerInterval = setInterval(function () {
@@ -105,12 +94,25 @@ function startTimer() {
             minutes++;
             seconds = 0;
         }
-        document.getElementById('timer').textContent = `Time: `;
+        document.getElementById('timer').textContent = `Time: ${formatTime(minutes, seconds, milliseconds)}`;
     }, 10);
 }
 
 function stopTimer() {
 
+};
+
+function resetGame(cards) {
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    cards.forEach(card => card.classList.remove('card-flipped'));
+    milliseconds = 0;
+    seconds = 0;
+    minutes = 0;
+    cardMatches = 0;
+    timerStarted = false;
+    document.getElementById('timer').textContent = `00:00:00`;
+    clearInterval(timerInterval);
+    shuffleCards(cards);
 };
 
 
@@ -138,6 +140,8 @@ function shuffleCards(cards) {
 
 shuffleCards(cards); // Shuffle cards on game load - including automatic reset after completion 
 
+cards.forEach(card => card.addEventListener('click', flipCard));
+
 // Export Functions 
 module.exports = {
     shuffleCards,
@@ -146,4 +150,5 @@ module.exports = {
     checkForMatch,
     disableCards,
     unflipCards,
+    resetGame,
 };

@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards } = require('../script');
+const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame } = require('../script');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -13,17 +13,18 @@ beforeAll(() => {
     document.open();
     document.write(fileContents);
     document.close();
+
 });
 
 describe('Memory Game Functions', () => {
-    let mockCard1, mockCard2, mockElement;
+    let mockCard1, mockCard2, mockClearInterval, mockShuffleCards;
 
     beforeEach(() => {
         // Needed some mock elements to be able to properly test the flip card function - jest.fn info found here (https://jestjs.io/docs/mock-functions)
         mockCard1 = { classList: { add: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '1') };
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
-
+        
     });
 
 
@@ -92,6 +93,19 @@ describe('Memory Game Functions', () => {
         // Clear the interval to stop the test from running indefinitely
         clearInterval(interval);
     });
+
+
+    test('resetGame should reset gameboard and shuffle cards', () => {
+        resetGame([mockCard1, mockCard2]);
+
+        expect(mockCard1.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+        expect(mockCard2.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+        expect(mockCard1.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockCard2.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockClearInterval).toHaveBeenCalled();
+        expect(mockShuffleCards).toHaveBeenCalledWith([mockCard1, mockCard2]);
+    });
+
 
     // Shuffle Cards Test (including steps taken as first test written)
     test('shuffleCards should shuffle the cards randomly', () => {
