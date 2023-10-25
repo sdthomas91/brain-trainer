@@ -31,6 +31,22 @@ describe('Memory Game Functions', () => {
         expect(mockCard1.classList.add).toHaveBeenCalledWith('card-flipped');
     });
 
+    test('checkForMatch should check if a correct match has been made', () => {
+        // Mock the scenario where the cards match
+        mockCard1.getAttribute.mockReturnValue('1');
+        mockCard2.getAttribute.mockReturnValue('1');
+
+        checkForMatch.call(mockCard1);
+        expect(disableCards).toHaveBeenCalled();
+
+        // Mock the scenario where the cards do not match
+        mockCard1.getAttribute.mockReturnValue('1');
+        mockCard2.getAttribute.mockReturnValue('2');
+
+        checkForMatch.call(mockCard1);
+        expect(unflipCards).toHaveBeenCalled();
+    })
+
     test('startTimer should start the game timer', () => {
         // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)
         jest.useFakeTimers();
