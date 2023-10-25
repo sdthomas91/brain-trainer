@@ -70,10 +70,12 @@ function disableCards() {
     cardMatches += 2;
 
     if(cardMatches === cards.length) {
-        // alert player of their win
-        alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
-        // reset game once the alert has been presented
-        resetGame();
+        setTimeout(() => {
+            //include alert logging time taken to compeltep and alert player of their win
+            alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
+            // reset game once the alert has been presented
+            resetGame();
+        }, 500); // 0.5 second delay before showing the completion alert - allows completed board to show
     }
 }
 
