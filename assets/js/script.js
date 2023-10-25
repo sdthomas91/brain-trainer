@@ -117,4 +117,5 @@ module.exports = {
     shuffleCards,
     flipCard,
     startTimer,
+    checkForMatch,
 };

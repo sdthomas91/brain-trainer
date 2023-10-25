@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer } = require('../script');
+const { shuffleCards, flipCard, startTimer, checkForMatch } = require('../script');
 
 beforeAll(() => {
     let fs = require("fs");
