@@ -60,16 +60,19 @@ function checkForMatch() {
 };
 
 function disableCards() {
-    console.log(`I've disable the cards`)
+    console.log(`I've disable the cards`);
 }
 
 function unflipCards() {
     // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
-    console.log(`I've unflipped the cards`)
+    console.log(`I've unflipped the cards`);
     lockBoard = true;
+    // Need a delay in order to show both cards before they are unflipped - will use timeout function 
+    setTimeout(() => {
+        firstCard.classList.remove('card-flipped');
+        secondCard.classList.remove('card-flipped');
+    }, 500);
 
-    firstCard.classList.remove('card-flipped');
-    secondCard.classList.remove('card-flipped');
 }
 
 function resetBoard() {
