@@ -48,6 +48,10 @@ function flipCard() {
 }
 
 function checkForMatch() {
+    // Check for match by comparingthe data-card attribute of the flipped cards
+    const isMatch = firstCard.getAttribute('data-card') === secondCard.getAttribute('data-card');
+    // Ternary Operator used for a quick logic statement to either disable cards so they cannot be played again or unflip cards if an incorrect match is made
+    isMatch ? disableCards() : unflipCards();
 
 };
 
