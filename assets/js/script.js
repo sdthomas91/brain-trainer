@@ -84,6 +84,9 @@ function disableCards() {
     resetBoard();
 }
 
+
+
+
 function unflipCards() {
     // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
     lockBoard = true;
