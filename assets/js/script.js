@@ -1,3 +1,4 @@
+
 // Gobal variables required - tried to use minimal global vars but needs must
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -9,34 +10,37 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
-let isPlaying = true;
-const bgMusic = document.getElementById('bg-music');
-const bgMusicToggle = document.getElementById('bg-music-toggle');
-const resetButton = document.getElementById('reset-button');
-// let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
-window.onload = function () {
-    resetGame();
-};
+
+
+// code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
+// let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity; 
+
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
 
-resetButton.addEventListener('click', resetGame);
-
-
-
 // Toggle Background Music
 
-bgMusicToggle.addEventListener('click', function () {
-    if (isPlaying) {
-        bgMusic.pause();
-        isPlaying = false;
-    } else {
-        bgMusic.play();
-        isPlaying = true;
-    }
-});
+function resetGame() {
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    cards.forEach(card => card.classList.remove('card-flipped'));
+    milliseconds = 0;
+    seconds = 0;
+    minutes = 0;
+    cardMatches = 0;
+    timerStarted = false;
+    document.getElementById('timer').textContent = `00:00:00`;
+    clearInterval(timerInterval);
+    shuffleCards();
+};
 
+// Initiate fresh gameplay
+window.onload = function () {
+    resetGame();
+};
+// Reset game via button
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener('click', resetGame);
 
 
 
@@ -83,6 +87,9 @@ function checkForMatch() {
 
 function disableCards() {
     // Take correct cards out of play but leave them as flipped cards
+    const audio = new Audio('../assets/audio/correct.mp3');
+
+    audio.play();
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
@@ -159,22 +166,9 @@ function formatTime(minutes, seconds, milliseconds) {
 }
 
 
-function resetGame() {
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    cards.forEach(card => card.classList.remove('card-flipped'));
-    milliseconds = 0;
-    seconds = 0;
-    minutes = 0;
-    cardMatches = 0;
-    timerStarted = false;
-    document.getElementById('timer').textContent = `00:00:00`;
-    clearInterval(timerInterval);
-    shuffleCards();
-};
-
 
 //Shuffle the cards using cards array - Final shuffle logic was found using https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleCards(cards) {
+function shuffleCards() {
     let currentIndex = cards.length;
     let randomIndex;
 
@@ -195,25 +189,25 @@ function shuffleCards(cards) {
 }
 
 
-shuffleCards(cards); // Shuffle cards on game load - including automatic reset after completion 
+shuffleCards(); // Shuffle cards on game load - including automatic reset after completion 
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 
-// Export Functions 
-module.exports = {
-    shuffleCards,
-    flipCard,
-    startTimer,
-    checkForMatch,
-    disableCards,
-    unflipCards,
-    resetGame,
-    stopTimer,
-    formatTime,
-    resetBoard,
-    toggleMusic,
-    playBgMusic,
-    resetClick,
-};
+// // Export Functions 
+// module.exports = {
+//     shuffleCards,
+//     flipCard,
+//     startTimer,
+//     checkForMatch,
+//     disableCards,
+//     unflipCards,
+//     resetGame,
+//     stopTimer,
+//     formatTime,
+//     resetBoard,
+//     toggleMusic,
+//     playBgMusic,
+//     resetClick,
+// };

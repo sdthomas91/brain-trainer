@@ -416,9 +416,23 @@
     <!-- /progress-Tiles -->
     <!---- Footer -->
     <audio id="bg-music" autoplay loop>
-      <source src="assets/audio/price-of-freedom-33106.mp3" type="audio/mpeg" />
+      <source src="assets/audio/background.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
+    <script>
+      let isPlaying = true;
+      const bgMusic = document.getElementById("bg-music");
+      const bgMusicToggle = document.getElementById("bg-music-toggle");
+      bgMusicToggle.addEventListener("click", function () {
+        if (isPlaying) {
+          bgMusic.pause();
+          isPlaying = false;
+        } else {
+          bgMusic.play();
+          isPlaying = true;
+        }
+      });
+    </script>
     <!-- /Footer -->
     <script src="assets/js/script.js"></script>
     <!-- BootStrap Scripts -->
