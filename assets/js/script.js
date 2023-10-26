@@ -9,6 +9,9 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
+let isPlaying = true;
+const bgMusic = document.getElementById('bg-music');
+const bgMusicToggle = document.getElementById('bg-music-toggle');
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
@@ -19,7 +22,17 @@ const cards = document.querySelectorAll('.card');
 // resetButton.addEventListener('click', resetGame);
 
 
+// Toggle Background Music
 
+bgMusicToggle.addEventListener('click', function () {
+    if (isPlaying) {
+        bgMusic.pause();
+        isPlaying = false;
+    } else {
+        bgMusic.play();
+        isPlaying = true;
+    }
+});
 
 
 function flipCard() {
@@ -94,6 +107,8 @@ function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('card-flipped');
         secondCard.classList.remove('card-flipped');
+
+        resetBoard();
     }, 500);
 
 }

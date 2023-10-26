@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame, stopTimer, formatTime } = require('../script');
+const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame, stopTimer, formatTime, resetBoard } = require('../script');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -24,7 +24,7 @@ describe('Memory Game Functions', () => {
         mockCard1 = { classList: { add: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '1') };
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
-        
+
     });
 
 
