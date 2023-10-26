@@ -195,19 +195,19 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 
-// // Export Functions 
-// module.exports = {
-//     shuffleCards,
-//     flipCard,
-//     startTimer,
-//     checkForMatch,
-//     disableCards,
-//     unflipCards,
-//     resetGame,
-//     stopTimer,
-//     formatTime,
-//     resetBoard,
-//     toggleMusic,
-//     playBgMusic,
-//     resetClick,
-// };
+// Export Functions 
+module.exports = {
+    shuffleCards,
+    flipCard,
+    startTimer,
+    checkForMatch,
+    disableCards,
+    unflipCards,
+    resetGame,
+    stopTimer,
+    formatTime,
+    resetBoard,
+    toggleMusic,
+    playBgMusic,
+    resetClick,
+};
