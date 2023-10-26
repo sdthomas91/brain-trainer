@@ -72,6 +72,7 @@ function disableCards() {
     cardMatches += 2;
 
     if (cardMatches === cards.length) {
+        stopTimer();
         setTimeout(() => {
             //include alert logging time taken to compeltep and alert player of their win
             alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
@@ -79,6 +80,8 @@ function disableCards() {
             resetGame();
         }, 500); // 0.5 second delay before showing the completion alert - allows completed board to show
     }
+
+    resetBoard();
 }
 
 function unflipCards() {
@@ -93,6 +96,11 @@ function unflipCards() {
 }
 
 function resetBoard() {
+    // Reset the boards gameplay
+    hasFlippedCard = false;
+    lockBoard = false;
+    firstCard = null;
+    secondCard = null;
 
 };
 
@@ -177,4 +185,5 @@ module.exports = {
     resetGame,
     stopTimer,
     formatTime,
+    resetBoard,
 };
