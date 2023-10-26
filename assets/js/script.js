@@ -12,31 +12,33 @@ let cardMatches = 0;
 let isPlaying = true;
 const bgMusic = document.getElementById('bg-music');
 const bgMusicToggle = document.getElementById('bg-music-toggle');
+const resetButton = document.getElementById('reset-button');
 // let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
-
+window.onload = function () {
+    resetGame();
+};
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
-// Add a reset button in case someone wants to start again
-const resetButton = document.getElementById('reset-button');
+
 resetButton.addEventListener('click', resetGame);
 
 
+
 // Toggle Background Music
-function playBgMusic() {
-    bgMusicToggle.addEventListener('click', function () {
-        if (isPlaying) {
-            bgMusic.pause();
-            isPlaying = false;
-        } else {
-            bgMusic.play();
-            isPlaying = true;
-        }
-    });
-}
+
+bgMusicToggle.addEventListener('click', function () {
+    if (isPlaying) {
+        bgMusic.pause();
+        isPlaying = false;
+    } else {
+        bgMusic.play();
+        isPlaying = true;
+    }
+});
 
 
-playBgMusic();
+
 
 function flipCard() {
     // Need a way of preventing user from flipping too many cards - lockBoard will be a boolean that will prevent user interaction whilst the game either flips/unflips
@@ -167,7 +169,7 @@ function resetGame() {
     timerStarted = false;
     document.getElementById('timer').textContent = `00:00:00`;
     clearInterval(timerInterval);
-    shuffleCards(cards);
+    shuffleCards();
 };
 
 
@@ -213,4 +215,5 @@ module.exports = {
     resetBoard,
     toggleMusic,
     playBgMusic,
+    resetClick,
 };
