@@ -5,7 +5,9 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame, stopTimer, formatTime, resetBoard } = require('../script');
+const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame, stopTimer, formatTime, resetBoard, } = require('../script');
+
+
 
 beforeAll(() => {
     let fs = require("fs");
@@ -18,6 +20,7 @@ beforeAll(() => {
 
 describe('Memory Game Functions', () => {
     let mockCard1, mockCard2, mockClearInterval, mockShuffleCards;
+    
 
     beforeEach(() => {
         // Needed some mock elements to be able to properly test the flip card function - jest.fn info found here (https://jestjs.io/docs/mock-functions)
