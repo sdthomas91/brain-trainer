@@ -10,7 +10,6 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
-let isPlaying = true;
 
 
 // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
@@ -19,20 +18,8 @@ let isPlaying = true;
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
-// Toggle Background Music
-const musicToggleBtn = document.getElementById('music-toggle');
-musicToggleBtn.addEventListener('click', toggleMusic());
-const toggleMusic = function () {
-    const bgMusic = document.getElementById('bg-music');
-    if (isPlaying) {
-        bgMusic.pause();
-        isPlaying = false;
-    } else {
-        bgMusic.play();
-        isPlaying = true;
-    }
-};
 
+// Toggle Background Music
 
 function resetGame() {
     cards.forEach(card => card.addEventListener('click', flipCard));
@@ -44,16 +31,10 @@ function resetGame() {
     timerStarted = false;
     document.getElementById('timer').textContent = `00:00:00`;
     clearInterval(timerInterval);
-    shuffleCards();
+    shuffleCards(cards);
 };
 
-// Initiate fresh gameplay
-window.onload = function () {
-    resetGame();
-};
-// Reset game via button
-const resetButton = document.getElementById('reset-button');
-resetButton.addEventListener('click', resetGame);
+
 
 
 
@@ -181,7 +162,7 @@ function formatTime(minutes, seconds, milliseconds) {
 
 
 //Shuffle the cards using cards array - Final shuffle logic was found using https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleCards() {
+function shuffleCards(cards) {
     let currentIndex = cards.length;
     let randomIndex;
 
@@ -202,8 +183,21 @@ function shuffleCards() {
 }
 
 
-shuffleCards(); // Shuffle cards on game load - including automatic reset after completion 
-
-cards.forEach(card => card.addEventListener('click', flipCard));
+shuffleCards(cards); // Shuffle cards on game load - including automatic reset after completion 
 
 
+
+
+// Export Functions 
+module.exports = {
+    shuffleCards,
+    flipCard,
+    startTimer,
+    checkForMatch,
+    disableCards,
+    unflipCards,
+    resetGame,
+    stopTimer,
+    formatTime,
+    resetBoard,
+};
