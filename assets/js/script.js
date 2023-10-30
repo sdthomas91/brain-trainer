@@ -15,6 +15,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
     let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
+    //Logic for best time to be logged - needed to format time so it logs out the same as timer 
+    function updateBestTime() {
+        // Level 1 best time update best-time
+        const bestTimeLevel1 = document.getElementById('best-time');
+        if (bestTimeLevel1) {
+            bestTimeLevel1.textContent = `${formatTime(
+                Math.floor(bestTime / 60),
+                Math.floor(bestTime) % 60,
+                Math.floor((bestTime % 1) * 100)
+            )}`;
+        }
+
+        const bestTimeLevel1Mob = document.getElementById('best-time-mobile');
+        if (bestTimeLevel1Mob) {
+            bestTimeLevel1Mob.textContent = `${formatTime(
+                Math.floor(bestTime / 60),
+                Math.floor(bestTime) % 60,
+                Math.floor((bestTime % 1) * 100)
+            )}`;
+        }
+
+        // Leadeboard update high-score
+        const highScoreLeaderboard = document.getElementById('new-high-score');
+        if (highScoreLeaderboard) {
+            highScoreLeaderboard.textContent = `${formatTime(
+                Math.floor(bestTime / 60),
+                Math.floor(bestTime) % 60,
+                Math.floor((bestTime % 1) * 100)
+            )}`;
+        }
+    }
+
+    updateBestTime();
     //Generate card array for use throughout 
     const cards = document.querySelectorAll('.card');
 
@@ -130,11 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
             audio.play();
             stopTimer();
             const currentTime = minutes * 60 + seconds + milliseconds / 100;
-            //Logic for best time to be logged - needed to format time so it logs out the same as timer 
+
+
+            // Have to use local storage to log it across multiple pages
             if (currentTime < bestTime) {
                 bestTime = currentTime;
-
-                document.getElementById('best-time').textContent = `Best Time: ${formatTime(Math.floor(bestTime / 60), Math.floor(bestTime) % 60, Math.floor((bestTime % 1) * 100))}`;
+                localStorage.setItem('bestTime', bestTime);
+                // Update the best time on the page
+                updateBestTime();
             }
 
 

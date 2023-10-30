@@ -38,10 +38,14 @@
     <div class="container-fluid navbar-container">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <!--  Show this only on mobile to medium screens  -->
-        <a class="navbar-brand d-lg-none mx-auto" href="index.html">
-          <h1 class="logo-text-mobile">
+        <a
+          class="navbar-brand nav-brand-mobile d-lg-none mx-auto"
+          href="index.html"
+        >
+          <h1 class="logo-text-mobile d-block d-md-none">
             <img src="assets/images/mobile-logo.png" style="width: 100%" />
           </h1>
+          <h1 class="logo-text-mobile d-none d-md-block">BrainTrainer</h1>
         </a>
 
         <button
@@ -433,13 +437,15 @@
       <div class="d-lg-none row container-fluid">
         <div class="col-12 best-time-count">
           <h2 class="level-subheading shadow-text">Best Time</h2>
-          <p id="best-time" class="level-text-content shadow-text">00:00:00</p>
+          <p id="best-time-mobile" class="level-text-content shadow-text">
+            00:00:00
+          </p>
         </div>
       </div>
       <div class="d-lg-none row container-fluid">
         <div class="col-12 attempt-count">
           <h2 class="level-subheading shadow-text">Attempts</h2>
-          <p id="attempts" class="level-text-content shadow-text">0</p>
+          <p id="attempts-mobile" class="level-text-content shadow-text">0</p>
         </div>
       </div>
       <!-- /Medium Screen Info -->

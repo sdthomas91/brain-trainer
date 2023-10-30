@@ -137,6 +137,9 @@ p {
 }
 
 /* ------Homepage Tiles------ */
+.progress-container {
+    margin-top: 50px;
+}
 
 .progress-tile {
     background: none;
@@ -387,6 +390,10 @@ p {
 /* ------------------ Medium Screens */
 
 @media screen and (max-width: 992px) {
+    .navbar-brand {
+        width: 40%;
+    }
+
     .leader-list {
         margin-left: 0px;
     }
@@ -412,7 +419,11 @@ p {
 
 /* ------------------ Small Screens */
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        width: 50%;
+    }
+}
 
 /* ------------------ XS Screens */
 @media screen and (max-width: 576px) {
@@ -430,16 +441,25 @@ p {
         margin: 0;
     }
 
-    .navbar-brand {
-        width: 50%;
-    }
+
 }
 
 /* ------------------ XXS Screens */
 @media screen and (max-width: 417px) {}
 
 /*-------------------------Min-Width Media Queries */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .logo-text-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-brand-mobile {
+        padding: 5px 0px;
+    }
+}
 
 @media screen and (min-width: 993px) {
     #best-time {
