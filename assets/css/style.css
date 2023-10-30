@@ -349,6 +349,36 @@ p {
 
 /* --/level content */
 
+/* ------Leaderboard------ */
+.player-rank {
+    text-align: center;
+}
+
+.player-rank i {
+    color: #f1a906;
+    font-size: 2.2rem;
+    margin-right: 7px;
+}
+
+#player-1,
+#new-high-score {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.player-container {
+    background: white;
+    padding: 20px;
+    margin: 0px 50px 20px 50px;
+    border-radius: 25px;
+}
+
+.leaderboard-container {
+    height: 100vh;
+}
+
+/* -----/Leaderboard----- */
+
 /* ------Media Queries------ */
 
 /* ------------------ Medium Screens */
@@ -382,7 +412,21 @@ p {
 @media screen and (max-width: 768px) {}
 
 /* ------------------ XS Screens */
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+    .player-container {
+        padding: 20px 5px;
+        margin: 0px 0px 10px 0px;
+        border-radius: 25px;
+    }
+
+    .player-name {
+        padding: 0;
+    }
+
+    #player-1 {
+        margin: 0;
+    }
+}
 
 /* ------------------ XXS Screens */
 @media screen and (max-width: 417px) {}
