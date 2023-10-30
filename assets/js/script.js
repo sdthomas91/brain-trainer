@@ -10,11 +10,45 @@ document.addEventListener('DOMContentLoaded', function () {
     let seconds = 0;
     let minutes = 0;
     let cardMatches = 0;
-
-
     // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
     let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
+    // Shuffle function - went round in circles, did some additional reading on Fisher Yates (https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript)
+    function shuffle(array) {
+        let currentIndex = array.length,
+          temporaryValue,
+          randomIndex;
+      
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+      
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+      
+        return array;
+      }
+
+    //   Function to shuffle cards calls on the already shuffled array using the Fisher Yates logic - potentially 
+    //   could be simplified but this works for now - this should be scalable as well so will work on larger grids.
+      function shuffleCards() {
+        const container = document.querySelector('.game-container');
+        let cards = Array.from(container.children);
+      
+        cards = shuffle(cards);
+      
+        cards.forEach((card, index) => {
+          card.style.order = index;
+        });
+      }
+      
+      
+      
+      
+      
+      
     //Logic for best time to be logged - needed to format time so it logs out the same as timer 
     function updateBestTime() {
         // Level 1 best time update best-time
@@ -307,14 +341,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //     return cards;
     // }
 
-    function shuffleCards() {
-        const gameContainer = document.querySelector('.game-container');
-        const cards = Array.from(document.querySelectorAll('.card'));
-        for (let i = cards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            gameContainer.appendChild(cards[j]);
-        }
-    }
 
 
 
