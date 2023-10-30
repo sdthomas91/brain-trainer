@@ -126,9 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
         cardMatches += 2;
 
         if (cardMatches === cards.length) {
+            const audio = new Audio('../assets/audio/winner.mp3');
+            audio.play();
             stopTimer();
+
             setTimeout(() => {
-                //include alert logging time taken to compeltep and alert player of their win
+                //include alert logging time taken to compelte and alert player of their win
                 alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
                 // reset game once the alert has been presented
                 resetGame();
