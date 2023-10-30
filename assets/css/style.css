@@ -43,6 +43,9 @@ p {
 
 .logo-text-mobile {
     font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-text {
@@ -425,6 +428,10 @@ p {
 
     #player-1 {
         margin: 0;
+    }
+
+    .navbar-brand {
+        width: 50%;
     }
 }
 
