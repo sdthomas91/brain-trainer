@@ -415,11 +415,12 @@
     </div>
     <!-- /progress-Tiles -->
     <!---- Footer -->
-    <audio id="bg-music" autoplay loop>
+    <audio class="background-music" id="bg-music" autoplay loop>
       <source src="assets/audio/background.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-    <script>
+    <!-- Script to toggle music - see known bugs in README.md -->
+    <!-- <script>
       let isPlaying = true;
       const bgMusic = document.getElementById("bg-music");
       const bgMusicToggle = document.getElementById("bg-music-toggle");
@@ -432,9 +433,9 @@
           isPlaying = true;
         }
       });
-    </script>
+    </script> -->
     <!-- /Footer -->
-    <script src="assets/js/script.js"></script>
+
     <!-- BootStrap Scripts -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -452,5 +453,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- BS Scripts -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
