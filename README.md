@@ -10,6 +10,17 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 <h2 align="center"><img src="/assets/images/bt-mockup.png"></h2>
 
+## Future Developments
+
+1. Leaderboard - at present the Leaderboard is a fairly static document. It works in as much as it will log the players best time to the leaderboard. Within the current version a best time will always be logged at rank 1 with some deliberately low scores logged automatically to the remaining positions. In future developments a backend will be developed in order to allow proper interactive ranking and allow the player to overwrite the other positions should their score allow.
+2. Backend - In future developments there will be a backend. At present local storage is used to log a best time but this poses some issues when it comes to a new/different player or changing devices. Future development will see the ability to log in, store best times and have the leaderboard rank different players times from different accounts, giving it a more competitive edge.
+3. Additional Levels - For this stage of the project I included just 1 level to showcase the functionality of the game, including sound effetcs, animations and javascript elements such as the timer and onclick functions. In future developments the game will allow players to progress onto the next level, once they have completed the level(s) prior. They will also be able to revisit levels to work on their best times. 
+4. Added achievements - ideally, in a later version of the game, there will be 3 stored tiers of completion times for each level. For each tier the player reaches, a star will be achieved. This will encourage players to practice and improve. 
+
+## Known Bugs
+
+1. Music Toggle - The function itself works fine, however it causes issues in the console when added to the script.js file. I had assumed that the issue lay with the fact that the script was running before DOM had loaded. I tried using the DOMContentLoaded eventListener but this did not help. For now, the script runs fine as long as it is inserted straight into the html files. Not ideal, and a fix will be included in future developments.
+
 ## User Experience (UX)
 
 - ### User stories
