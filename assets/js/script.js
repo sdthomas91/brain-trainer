@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateBestTime();
+    
     //Generate card array for use throughout 
     const cards = document.querySelectorAll('.card');
 
@@ -89,8 +90,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function resetGame() {
-        cards.forEach(card => card.addEventListener('click', flipCard));
-        cards.forEach(card => card.classList.remove('card-flipped'));
+        cards.forEach((card, index) => {
+            card.style.order = index;
+            card.classList.remove('card-flipped');
+            card.addEventListener('click', flipCard);
+        });
         milliseconds = 0;
         seconds = 0;
         minutes = 0;
@@ -99,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('timer').textContent = `00:00:00`;
         clearInterval(timerInterval);
         shuffleCards();
-    };
+    }
 
     // Similar logic as above to ensure this code only runs on pages with a reset button so as to avoid issue with page loading
     if (document.getElementById('reset-button')) {
@@ -283,28 +287,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //Shuffle the cards using cards array - Final shuffle logic was found using https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    // function shuffleCards() {
+    //     let currentIndex = cards.length;
+    //     let randomIndex;
+
+    //     // While there remain elements to shuffle.
+    //     while (currentIndex > 0) {
+    //         // Pick a remaining element.
+    //         randomIndex = Math.floor(Math.random() * currentIndex);
+    //         currentIndex--;
+
+    //         // And swap it with the current element.
+    //         [cards[currentIndex].style.order, cards[randomIndex].style.order] = [
+    //             cards[randomIndex].style.order,
+    //             cards[currentIndex].style.order
+    //         ];
+    //     }
+
+    //     return cards;
+    // }
+
     function shuffleCards() {
-        let currentIndex = cards.length;
-        let randomIndex;
-
-        // While there remain elements to shuffle.
-        while (currentIndex > 0) {
-            // Pick a remaining element.
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-
-            // And swap it with the current element.
-            [cards[currentIndex].style.order, cards[randomIndex].style.order] = [
-                cards[randomIndex].style.order,
-                cards[currentIndex].style.order
-            ];
+        const gameContainer = document.querySelector('.game-container');
+        const cards = Array.from(document.querySelectorAll('.card'));
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            gameContainer.appendChild(cards[j]);
         }
-
-        return cards;
     }
 
 
-    shuffleCards(); // Shuffle cards on game load - including automatic reset after completion 
 
     cards.forEach(card => card.addEventListener('click', flipCard));
 
