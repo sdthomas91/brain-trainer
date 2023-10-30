@@ -136,10 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 document.getElementById('best-time').textContent = `Best Time: ${formatTime(Math.floor(bestTime / 60), Math.floor(bestTime) % 60, Math.floor((bestTime % 1) * 100))}`;
             }
-            const attemptsElement = document.getElementById('attempts');
-            let attempts = parseInt(attemptsElement.textContent);
-            attempts++;
-            attemptsElement.textContent = attempts;
+
+
+
 
 
             setTimeout(() => {
