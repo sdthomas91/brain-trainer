@@ -11,21 +11,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let minutes = 0;
     let cardMatches = 0;
     // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
+    // ParseInt usage refreshed (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
     let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
     // Shuffle function - went round in circles, did some additional reading on Fisher Yates (https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript)
     function shuffle(array) {
         let currentIndex = array.length,
-          temporaryValue,
+          tempValue,
           randomIndex;
       
         while (0 !== currentIndex) {
           randomIndex = Math.floor(Math.random() * currentIndex);
           currentIndex -= 1;
       
-          temporaryValue = array[currentIndex];
+          tempValue = array[currentIndex];
           array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
+          array[randomIndex] = tempValue;
         }
       
         return array;
