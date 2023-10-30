@@ -411,14 +411,25 @@ p {
         font-size: 1.8rem;
     }
 
+    .navbar-brand {
+        width: 25%;
+    }
+
+
+    .logo-text-mobile {
+        padding-left: 50px;
+    }
+
 }
 
 /* ------------------ Small Screens */
 
 @media screen and (max-width: 768px) {
     .navbar-brand {
-        width: 50%;
+        width: 40%;
     }
+
+
 }
 
 /* ------------------ XS Screens */
@@ -428,6 +439,8 @@ p {
         margin: 0px 0px 10px 0px;
         border-radius: 25px;
     }
+
+
 
     .player-name {
         padding: 0;
@@ -441,16 +454,16 @@ p {
 }
 
 /* ------------------ XXS Screens */
-@media screen and (max-width: 417px) {}
+@media screen and (max-width: 417px) {
+
+    .navbar-brand {
+        width: 60%;
+    }
+}
 
 /*-------------------------Min-Width Media Queries */
 @media screen and (min-width: 768px) {
-    .logo-text-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+
 
     .nav-brand-mobile {
         padding: 5px 0px;
