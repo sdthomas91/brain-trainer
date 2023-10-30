@@ -131,9 +131,24 @@ document.addEventListener('DOMContentLoaded', function () {
             stopTimer();
 
             setTimeout(() => {
-                //include alert logging time taken to compelte and alert player of their win
+                const modalBody = document.querySelector('#winnerModal .modal-body');
+                modalBody.innerHTML = `<p class="modal-text">
+              You have completed the level in 
+              
+             ${formatTime(
+                    minutes,
+                    seconds,
+                    milliseconds
+                )}. Feel free to reset the game and see if you can beat your previous score!
+                <br><br>
+                Alternatively, you can check in regularly to see if new levels have become available!
+                <br><br>
+                Thanks for playing BrainTrainer :)</p>`;
 
-                alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
+                //include alert logging time taken to compelte and alert player of their win
+                $("#winnerModal").modal('show');
+
+                // alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
                 // reset game once the alert has been presented
                 resetGame();
             }, 500); // 0.5 second delay before showing the completion alert - allows completed board to show
