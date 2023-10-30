@@ -77,6 +77,17 @@
 
           <ul class="navbar-nav">
             <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link">
+                <!-- Button to toggle background music on and off -->
+                <button type="button" class="btn btn-navi" id="bg-music-toggle">
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-volume-off nav-icon shadow-text"
+                  ></i
+                  >Music
+                </button>
+              </a>
+            </li>
+            <li class="nav-item nav-icon-text list-icon">
               <a class="nav-link" href="#">
                 <!-- How To Play Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
                 <button
@@ -250,157 +261,78 @@
     </div>
     <!-- /Help Modal -->
     <!-- /MODALS -->
-    <!-- Level Container -->
-    <div class="level-container container-fluid">
-    <!-- Level Title -->
-    
-    <div class="row">
-      <div class="col-12">
-        <h1 class="level-heading shadow-text">Level 1</h1>
-      </div>
-    </div>
-    <!-- /Level Title -->
-    <!-- Game Tiles -->
-    <div class="container">
-      <div class="row game-container">
-        <div class="col-2 col-md-4 d-flex">
-          <div class="d-none d-lg-flex row container-fluid">
-            <div class="col-12 best-time-count level-text-lg">
-              <h2 class="level-subheading shadow-text">Best Time</h2>
-              <p id="best-time" class="level-text-content shadow-text">
-                00:00:00
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
-          <!-- Card Structure Left - data-card used for JS interaction -->
-          <div class="card" data-card="1">
-            <div class="card-inner">
-              <div class="card-front left-tile shadow-tile">
-                <img
-                  src="assets/images/mobile-logo.png"
-                  alt="Card with image on"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="card-back">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYNCWThEtD7Go-o2C9w_7bCyS4Aq_-4EPEGDLhHU&s"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- /Card Structure Left -->
-        </div>
-        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
-          <!-- Card Structure Right - data-card used for JS interaction -->
-          <div class="card" data-card="2">
-            <div class="card-inner">
-              <div class="card-front right-tile shadow-tile">
-                <img
-                  src="assets/images/mobile-logo.png"
-                  alt="Card with image on"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="card-back">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/40/40157.png"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- /Card Structure Right -->
-        </div>
-        <div class="col-2 col-md-4 d-flex"></div>
-        <div class="col-2 col-md-4 d-flex">
-          <div class="d-none d-lg-flex row container-fluid">
-            <div class="col-12 attempt-count level-text-lg">
-              <h2 class="level-subheading shadow-text">Attempts</h2>
-              <p id="attempts" class="level-text-content shadow-text">0</p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
-        >
-          <!-- Card Structure Left -->
-          <div class="card" data-card="1">
-            <div class="card-inner">
-              <div class="card-front left-tile shadow-tile">
-                <img
-                  src="assets/images/mobile-logo.png"
-                  alt="Card with image on"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="card-back">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYNCWThEtD7Go-o2C9w_7bCyS4Aq_-4EPEGDLhHU&s"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- /Card Structure Left -->
-        </div>
-        <div
-          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
-        >
-          <!-- Card Structure Right -->
-          <div class="card" data-card="2">
-            <div class="card-inner">
-              <div class="card-front right-tile shadow-tile">
-                <img
-                  src="assets/images/mobile-logo.png"
-                  alt="Card with image on"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="card-back">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/40/40157.png"
-                  class="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- /Card Structure Right -->
-        </div>
-        <div class="col-2 col-md-4 d-flex"></div>
-      </div>
-    </div>
-    <!-- /Game Tiles -->
+    <!-- Leaderboard Container -->
+    <div class="leaderboard-container container-fluid">
+      <!-- LB Title -->
 
-    <!-- Timer -->
-    <div class="row container-fluid">
-      <div class="col-12">
-        <h2 id="timer" class="level-heading shadow-text">00:00:00</h2>
+      <div class="row">
+        <div class="col-12">
+          <h1 class="level-heading shadow-text">Leaderboard</h1>
+        </div>
       </div>
-    </div>
-    <!-- /Timer -->
-
-    <!-- Medium Screen Info -->
-    <div class="d-lg-none row container-fluid">
-      <div class="col-12 best-time-count">
-        <h2 class="level-subheading shadow-text">Best Time</h2>
-        <p id="best-time" class="level-text-content shadow-text">00:00:00</p>
+      <!-- /LB Title -->
+      <!-- Board -->
+      <div class="container">
+        <div class="row player-container">
+          <div class="player-rank col-3">
+            <h3><i class="fa-solid fa-crown"></i>1.</h3>
+          </div>
+          <div class="player-name col-5">Player 1</div>
+          <div id="new-high-score" class="player-time col-4"></div>
+        </div>
+        <div class="row player-container">
+          <div class="player-rank col-3">
+            <h3>2.</h3>
+          </div>
+          <div class="player-name col-5">
+            <h3>N Dubz</h3>
+          </div>
+          <div class="player-time col-4">
+            <h3>03:55:07</h3>
+          </div>
+        </div>
+        <div class="row player-container">
+          <div class="player-rank col-3">
+            <h3>3.</h3>
+          </div>
+          <div class="player-name col-5">
+            <h3>Kelly C</h3>
+          </div>
+          <div class="player-time col-4">
+            <h3>04:09:22</h3>
+          </div>
+        </div>
+        <div class="row player-container">
+          <div class="player-rank col-3">
+            <h3>4.</h3>
+          </div>
+          <div class="player-name col-5">
+            <h3>Ali G</h3>
+          </div>
+          <div class="player-time col-4">
+            <h3>04:25:14</h3>
+          </div>
+        </div>
+        <div class="row player-container">
+          <div class="player-rank col-3">
+            <h3>5.</h3>
+          </div>
+          <div class="player-name col-5">
+            <h3>Jeremy V</h3>
+          </div>
+          <div class="player-time col-4">
+            <h3>04:35:57</h3>
+          </div>
+        </div>
       </div>
+      <!-- /Game Tiles -->
     </div>
-    <div class="d-lg-none row container-fluid">
-      <div class="col-12 attempt-count">
-        <h2 class="level-subheading shadow-text">Attempts</h2>
-        <p id="attempts" class="level-text-content shadow-text">0</p>
-      </div>
-    </div>
-    <!-- /Medium Screen Info -->
-    <!-- Reset Button -->
-    <button id="reset-button" class="btn">Reset</button>
-    <!-- /Reset Buttom -->
-</div>
+    <!-- Audio -->
+    <audio id="bg-music" autoplay loop>
+      <source src="assets/audio/background.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- /audio -->
     <script src="assets/js/script.js"></script>
     <!-- BootStrap Scripts -->
     <script

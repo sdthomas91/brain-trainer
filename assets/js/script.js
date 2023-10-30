@@ -10,7 +10,6 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let cardMatches = 0;
-let isPlaying = true;
 
 
 // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
@@ -19,19 +18,9 @@ let isPlaying = true;
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
 
-// Toggle Background Music
-const musicToggleBtn = document.getElementById('music-toggle');
-musicToggleBtn.addEventListener('click', toggleMusic());
-const toggleMusic = function () {
-    const bgMusic = document.getElementById('bg-music');
-    if (isPlaying) {
-        bgMusic.pause();
-        isPlaying = false;
-    } else {
-        bgMusic.play();
-        isPlaying = true;
-    }
-};
+
+
+
 
 
 function resetGame() {
