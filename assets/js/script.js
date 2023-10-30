@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
-    // let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity; 
+    let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
     //Generate card array for use throughout 
     const cards = document.querySelectorAll('.card');
@@ -129,6 +129,18 @@ document.addEventListener('DOMContentLoaded', function () {
             const audio = new Audio('../assets/audio/winner.mp3');
             audio.play();
             stopTimer();
+            const currentTime = minutes * 60 + seconds + milliseconds / 100;
+            //Logic for best time to be logged - needed to format time so it logs out the same as timer 
+            if (currentTime < bestTime) {
+                bestTime = currentTime;
+
+                document.getElementById('best-time').textContent = `Best Time: ${formatTime(Math.floor(bestTime / 60), Math.floor(bestTime) % 60, Math.floor((bestTime % 1) * 100))}`;
+            }
+            const attemptsElement = document.getElementById('attempts');
+            let attempts = parseInt(attemptsElement.textContent);
+            attempts++;
+            attemptsElement.textContent = attempts;
+
 
             setTimeout(() => {
                 const modalBody = document.querySelector('#winnerModal .modal-body');
