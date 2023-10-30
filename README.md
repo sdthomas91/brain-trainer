@@ -20,9 +20,8 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 ## Known Bugs
 
-1. Music Toggle - The function itself works fine, however it causes issues in the console when added to the script.js file. I had assumed that the issue lay with the fact that the script was running before DOM had loaded. I tried using the DOMContentLoaded eventListener but this did not help. For now, the script runs fine as long as it is inserted straight into the html files. Not ideal, and a fix will be included in future developments. ----- UPDATE ----- used new logic that meant the code would only run if the elements were present on the page. This meant that I was able to include all scripts in the script.js file and code ran smoothly regardless of page.
+1. Music Toggle - The function itself works fine, however it causes issues in the console when added to the script.js file. I had assumed that the issue lay with the fact that the script was running before DOM had loaded. I tried using the DOMContentLoaded eventListener but this did not help. For now, the script runs fine as long as it is inserted straight into the html files. Not ideal, and a fix will be included in future developments. ----- UPDATE ----- decided to include music on all pages so as to avoid script loading issues and also to keep a consistent feel throughout the site. Music toggle funcion now flawless across pages and devices.
 2. Music Playing - there is a slight issue with the autoplay function in that it doesn't always play on page refresh. Fresh page load, or page load from clicking the link is usually successful. Look over a number of articles and tutorials but it would seem the setup is correct. Will need to be rectified in a later version. For now the toggle works and the music plays more often than it does not. Does not interfere with gameplay so not a major bug.
-3.
 
 ## User Experience (UX)
 
@@ -92,9 +91,13 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 - Interaction feedback used throughout - this includes all clickable buttons/links, cards, sound effects, animations.
 
+- Leaderboard allows players to rank themselves (functionality to be improved in later versions)
+
 ### User Feedback Implementations
 
-- A number of users fedback that they would prefer to have an immediate option to submit a booking enquiry rather than scroll to a generic contact form (the navigation could take them there, but "it still felt too generic") As such, I implemented a second modal with the purpose of submitting a booking request. It includes prompts, user feedback and notification that it could take up to 48 hours for a response so as to set user expectations.
+- A number of users fedback that they would rather the music play across all pages and maintain the functionality to toggle music on and off. Gentle piano music used as it can aid memory function and concentration. 
+- Issues with logo sizing impacting game view on smaller devices - used image and text combination with bootstrap responsive options to display each respectively. This allows for a more seamless cross platform experience. 
+- Clearer notice that level is locked upon click and also when game was completed - originally had an alert but decided to use a modal and implement some logic to show the modal automatically once each relevant trigger was found. 
 
 ## Technologies Used
 
@@ -140,7 +143,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 ## Testing
 
-A separate tests document has been added to showcase the Javascript testing - this can be found in the scripts directory.
+A separate tests document has been added to showcase the Javascript testing - this can be found in the scripts directory. I also duplicated the script document which can be found is game.js - this was to avoid having to remove event listeners and comment out exports etc. for published site to run effectively but also to make testing easier.
 
 - Little to no HTML CSS testing was required due to the simplicity of the web pages - still validated through W3C validator as listed below.
 
