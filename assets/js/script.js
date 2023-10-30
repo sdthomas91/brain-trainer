@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             setTimeout(() => {
                 //include alert logging time taken to compelte and alert player of their win
+
                 alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
                 // reset game once the alert has been presented
                 resetGame();
