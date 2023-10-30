@@ -73,6 +73,15 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`No Background Music`);
     }
 
+    // Originally used an alert to let users know that the level was locked but it was not editable. Wanted to style
+    // so opted for a modal instead using the same logic as the winner modal. Hidden button, modal message. 
+    document.addEventListener('click', function (event) {
+        if (event.target.closest('.lock-tile')) {
+            const modalBody = document.querySelector('#lockModal .modal-body');
+            modalBody.innerHTML = `<p class="modal-text">Please bear with us!<br><br> Unfortunately, this level is currently unavailable. Be sure to check in regularly for updates</p>`;
+            $('#lockModal').modal('show');
+        }
+    });
 
 
 
@@ -99,9 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // On window load - reset game for fresh game play
-    window.onload = function () {
-        resetGame();
-    };
+    if (document.getElementById('game-play')) {
+        window.onload = function () {
+            resetGame();
+        };
+    }
+    else {
+        console.log('Not a playable page');
+    }
+
 
 
 
@@ -195,10 +210,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <br><br>
                 Thanks for playing BrainTrainer :)</p>`;
 
-                //include alert logging time taken to compelte and alert player of their win
+                //include alert logging time taken to compelte and alert player of their win - (https://stackoverflow.com/questions/17288395/showing-a-modal-when-onclick-method-is-called-of-a)
                 $("#winnerModal").modal('show');
 
-                // alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
+
                 // reset game once the alert has been presented
                 resetGame();
             }, 500); // 0.5 second delay before showing the completion alert - allows completed board to show
