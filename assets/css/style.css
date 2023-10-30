@@ -38,7 +38,6 @@ p {
 /* -------NavBar-------- */
 .navbar-brand {
     text-shadow: 3px 3px #1b1b1b;
-    padding-left: 70px;
 }
 
 .logo-text-mobile {
@@ -62,9 +61,6 @@ p {
     color: white;
 }
 
-.leader-list {
-    margin-left: 20px;
-}
 
 .icon-list {
     margin-right: 20px;
@@ -394,8 +390,8 @@ p {
         width: 40%;
     }
 
-    .leader-list {
-        margin-left: 0px;
+    .progress-container {
+        margin-top: 10px;
     }
 
     .nav-icon {
@@ -467,6 +463,7 @@ p {
         text-align: left;
         margin: 10px 0;
     }
+
 }
 
 @media screen and (min-width: 1200px) {}

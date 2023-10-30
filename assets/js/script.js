@@ -65,13 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    musicPlaying();
     // Finally figured a way to make this work - https://stackoverflow.com/questions/49679094/how-to-check-if-document-contains-an-element
     // Checked the current page for the music element and so it will only load if it contains music
-    if (document.getElementById('bg-music')) {
-        musicPlaying();
-    } else {
-        console.log(`No Background Music`);
-    }
+    // if (document.getElementById('bg-music')) {
+    //     musicPlaying();
+    // } else {
+    //     console.log(`No Background Music`);
+    // }
 
     // Originally used an alert to let users know that the level was locked but it was not editable. Wanted to style
     // so opted for a modal instead using the same logic as the winner modal. Hidden button, modal message. 

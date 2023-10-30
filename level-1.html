@@ -33,6 +33,7 @@
 
   <body>
     <!---- Header -->
+
     <!---- Navigation -->
     <!-- Bootstrap NAV template used https://codepen.io/JacobLett/pen/mXxKpE -->
     <div class="container-fluid navbar-container">
@@ -65,14 +66,27 @@
           class="collapse navbar-collapse justify-content-between"
           id="navbarToggle"
         >
-          <ul class="navbar-nav mt-1 mt-lg-0 leader-list">
+          <ul class="navbar-nav">
             <li class="nav-item nav-icon-text list-icon">
-              <a class="nav-link" href="leaderboard.html"
-                ><i
-                  class="d-inline d-lg-block fa-solid fa-trophy nav-icon shadow-text"
-                ></i
-                >Leaderboard</a
-              >
+              <a class="nav-link" href="leaderboard.html">
+                <button type="button" class="btn btn-navi">
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-trophy nav-icon shadow-text"
+                  ></i
+                  >Leaderboard
+                </button>
+              </a>
+            </li>
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link">
+                <!-- Button to toggle background music on and off -->
+                <button type="button" class="btn btn-navi" id="bg-music-toggle">
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-volume-off nav-icon shadow-text"
+                  ></i
+                  >Music
+                </button>
+              </a>
             </li>
           </ul>
 
@@ -448,7 +462,12 @@
       <button id="reset-button" class="btn">Reset</button>
       <!-- /Reset Buttom -->
     </div>
-
+    <!-- Audio -->
+    <audio class="background-music" id="bg-music" autoplay loop>
+      <source src="assets/audio/background.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- /Audio -->
     <script src="assets/js/script.js"></script>
     <!-- BootStrap Scripts -->
     <script
