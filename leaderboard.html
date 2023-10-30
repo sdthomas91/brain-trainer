@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tile Flip Memory Game" />
+    <title>BrainTrainer | Timed Tile Flip</title>
+    <script
+      src="https://kit.fontawesome.com/d78b3a3c85.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kavoon&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <!---- Header -->
+    <!---- Navigation -->
+    <!-- Bootstrap NAV template used https://codepen.io/JacobLett/pen/mXxKpE -->
+    <div class="container-fluid navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <!--  Show this only on mobile to medium screens  -->
+        <a class="navbar-brand d-lg-none mx-auto" href="index.html">
+          <h1 class="logo-text-mobile">BT</h1>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggle"
+          aria-controls="navbarToggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--  Use flexbox utility classes to change how the child elements are justified  -->
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarToggle"
+        >
+          <ul class="navbar-nav mt-1 mt-lg-0 leader-list">
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#"
+                ><i
+                  class="d-inline d-lg-block fa-solid fa-trophy nav-icon shadow-text"
+                ></i
+                >Leaderboard</a
+              >
+            </li>
+          </ul>
+
+          <!--   Show this only lg screens and up   -->
+          <a class="navbar-brand d-none d-lg-block" href="index.html">
+            <h1 class="logo-text">BrainTrainer</h1>
+          </a>
+
+          <ul class="navbar-nav">
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#">
+                <!-- How To Play Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                <button
+                  type="button"
+                  class="btn btn-navi"
+                  data-toggle="modal"
+                  data-target="#howToModal"
+                >
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-circle-info nav-icon shadow-text"
+                  ></i
+                  >How To Play
+                </button>
+              </a>
+            </li>
+            <li class="nav-item nav-icon-text list-icon">
+              <a class="nav-link" href="#">
+                <!-- Help Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                <button
+                  type="button"
+                  class="btn btn-navi"
+                  data-toggle="modal"
+                  data-target="#helpModal"
+                >
+                  <i
+                    class="d-inline d-lg-block fa-solid fa-circle-question nav-icon shadow-text"
+                  ></i
+                  >Help
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- /Navigation -->
+    <!-- /Header -->
+    <!-- MODALS -->
+    <!-- How To Play Modal -->
+    <div
+      class="modal fade"
+      id="howToModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="howToModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">How To Play!</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">
+              Welcome to the BrainTrainer Flip Card Memory Game! This classic
+              game is a fantastic way to challenge your memory skills and have
+              fun at the same time. Here's how to get started:
+            </p>
+
+            <h3>Basic Gameplay:</h3>
+            <ol class="modal-text">
+              <li>
+                <strong>Set Up:</strong> Lay out an even number of cards face
+                down in a grid. Ensure that each card has a matching pair.
+              </li>
+              <li>
+                <strong>Game Objective:</strong> The goal is to find all the
+                matching pairs by flipping two cards at a time. Matched pairs
+                are removed from the grid.
+              </li>
+              <li>
+                <strong>Taking Turns:</strong> Players take turns flipping two
+                cards at a time, trying to remember the positions of the cards
+                to make matches.
+              </li>
+              <li>
+                <strong> Memory Challenge:</strong> The game tests your memory,
+                as you'll need to remember the positions of previously revealed
+                cards to make successful matches.
+              </li>
+              <li>
+                <strong>Winning:</strong> The game is won when all pairs are
+                successfully matched and removed from the grid.
+              </li>
+            </ol>
+            <h3>Using the Reset Button:</h3>
+            <ul class="modal-text">
+              <li>
+                <strong>Resetting the Game: </strong> If you want to start over,
+                simply hit the "Reset" button. This will rearrange the cards and
+                reset the game grid, allowing you to have a fresh start and a
+                new challenge.
+              </li>
+            </ul>
+
+            <h3>Competing Against Your Own Time:</h3>
+            <ul class="modal-text">
+              <li>
+                <strong>Time Challenge: </strong> Try to beat your previous
+                time! Record the time it takes you to finish the game and
+                challenge yourself to complete it in a shorter duration with
+                each new attempt.
+              </li>
+              <li>
+                <strong>Improving Memory: </strong> By competing against your
+                own time, you'll not only enhance your memory skills but also
+                improve your cognitive abilities, making the game both
+                entertaining and beneficial for your mind.
+              </li>
+            </ul>
+            <p class="modal-text">
+              Remember, the key to success in this game is concentration and a
+              sharp memory. Have fun and challenge yourself to beat your own
+              records!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /How To Play Modal -->
+    <!-- Help Modal -->
+    <div
+      class="modal fade"
+      id="helpModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="helpModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Need Help?</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">
+              If you have noticed any bugs or you are having issues with the
+              gameplay, please get in touch by
+              <a href="mailto:info@braintrainer.co.uk"> email</a>. We appreciate
+              your feedback!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Help Modal -->
+    <!-- /MODALS -->
+    <!-- Level Container -->
+    <div class="level-container container-fluid">
+    <!-- Level Title -->
+    
+    <div class="row">
+      <div class="col-12">
+        <h1 class="level-heading shadow-text">Level 1</h1>
+      </div>
+    </div>
+    <!-- /Level Title -->
+    <!-- Game Tiles -->
+    <div class="container">
+      <div class="row game-container">
+        <div class="col-2 col-md-4 d-flex">
+          <div class="d-none d-lg-flex row container-fluid">
+            <div class="col-12 best-time-count level-text-lg">
+              <h2 class="level-subheading shadow-text">Best Time</h2>
+              <p id="best-time" class="level-text-content shadow-text">
+                00:00:00
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
+          <!-- Card Structure Left - data-card used for JS interaction -->
+          <div class="card" data-card="1">
+            <div class="card-inner">
+              <div class="card-front left-tile shadow-tile">
+                <img
+                  src="assets/images/mobile-logo.png"
+                  alt="Card with image on"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="card-back">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYNCWThEtD7Go-o2C9w_7bCyS4Aq_-4EPEGDLhHU&s"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- /Card Structure Left -->
+        </div>
+        <div class="col-4 col-md-2 d-flex justify-content-center level-tile">
+          <!-- Card Structure Right - data-card used for JS interaction -->
+          <div class="card" data-card="2">
+            <div class="card-inner">
+              <div class="card-front right-tile shadow-tile">
+                <img
+                  src="assets/images/mobile-logo.png"
+                  alt="Card with image on"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="card-back">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/40/40157.png"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- /Card Structure Right -->
+        </div>
+        <div class="col-2 col-md-4 d-flex"></div>
+        <div class="col-2 col-md-4 d-flex">
+          <div class="d-none d-lg-flex row container-fluid">
+            <div class="col-12 attempt-count level-text-lg">
+              <h2 class="level-subheading shadow-text">Attempts</h2>
+              <p id="attempts" class="level-text-content shadow-text">0</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
+        >
+          <!-- Card Structure Left -->
+          <div class="card" data-card="1">
+            <div class="card-inner">
+              <div class="card-front left-tile shadow-tile">
+                <img
+                  src="assets/images/mobile-logo.png"
+                  alt="Card with image on"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="card-back">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYNCWThEtD7Go-o2C9w_7bCyS4Aq_-4EPEGDLhHU&s"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- /Card Structure Left -->
+        </div>
+        <div
+          class="col-4 col-md-2 d-flex justify-content-center level-tile locked-level"
+        >
+          <!-- Card Structure Right -->
+          <div class="card" data-card="2">
+            <div class="card-inner">
+              <div class="card-front right-tile shadow-tile">
+                <img
+                  src="assets/images/mobile-logo.png"
+                  alt="Card with image on"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="card-back">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/40/40157.png"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- /Card Structure Right -->
+        </div>
+        <div class="col-2 col-md-4 d-flex"></div>
+      </div>
+    </div>
+    <!-- /Game Tiles -->
+
+    <!-- Timer -->
+    <div class="row container-fluid">
+      <div class="col-12">
+        <h2 id="timer" class="level-heading shadow-text">00:00:00</h2>
+      </div>
+    </div>
+    <!-- /Timer -->
+
+    <!-- Medium Screen Info -->
+    <div class="d-lg-none row container-fluid">
+      <div class="col-12 best-time-count">
+        <h2 class="level-subheading shadow-text">Best Time</h2>
+        <p id="best-time" class="level-text-content shadow-text">00:00:00</p>
+      </div>
+    </div>
+    <div class="d-lg-none row container-fluid">
+      <div class="col-12 attempt-count">
+        <h2 class="level-subheading shadow-text">Attempts</h2>
+        <p id="attempts" class="level-text-content shadow-text">0</p>
+      </div>
+    </div>
+    <!-- /Medium Screen Info -->
+    <!-- Reset Button -->
+    <button id="reset-button" class="btn">Reset</button>
+    <!-- /Reset Buttom -->
+</div>
+    <script src="assets/js/script.js"></script>
+    <!-- BootStrap Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BS Scripts -->
+  </body>
+</html>

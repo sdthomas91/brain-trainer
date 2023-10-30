@@ -1,4 +1,9 @@
 
+/**
+ * Separate document created containing only functions for testing purposes - 
+ * this was to side step the issue of having event handlers in the testing document.
+ */
+
 // Gobal variables required - tried to use minimal global vars but needs must
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -12,8 +17,6 @@ let minutes = 0;
 let cardMatches = 0;
 
 
-// code for bestTime storing found on Stack Overflow ( https://stackoverflow.com/questions/63634765/making-a-high-score-best-time-localstorage-in-javascript)
-// let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity; 
 
 //Generate card array for use throughout 
 const cards = document.querySelectorAll('.card');
