@@ -138,7 +138,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
 
-
+            const attemptsEl = document.getElementById('attempts');
+            let attempts = parseInt(attemptsEl.textContent);
+            attempts++;
+            attemptsEl.textContent = attempts;
 
 
             setTimeout(() => {
