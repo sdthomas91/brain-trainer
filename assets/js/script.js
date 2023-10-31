@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
     // Audio files - used new audio constructor as found here (https://gomakethings.com/how-to-play-a-sound-with-javascript/)
+    
     const correct = new Audio('../assets/audio/correct.mp3');
     const incorrect = new Audio('../assets/audio/incorrect.mp3');
     const winner = new Audio('../assets/audio/winner.mp3');

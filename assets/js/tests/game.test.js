@@ -140,12 +140,13 @@ describe('Memory Game Functions', () => {
     
 });
 
+//  I have decided to separate tests for the resetGame function - I was struggling to make it work within my other suite 
+// I am also aware that the complexity of these functions is within my scope, but the testing of them is not as JEST is quite
+// new to me. As such, I have broken them down into smaller, simpler functions that are easily tested. The overall functionality
+// and concept of the resetGame function remains, and it will be recompiled in the live site script.
 describe('resetGameTests', () => {
     let mockCard;
     let mockIndex;
-    let milliseconds;
-    let seconds;
-    let minutes;
 
     beforeEach(() => {
       mockCard = {
@@ -183,6 +184,7 @@ describe('resetGameTests', () => {
         expect(resetValues.minutes).toBe(0);
         expect(resetValues.timerStarted).toBe(false);
     });
+    
 
   });
 
