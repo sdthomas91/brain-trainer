@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer } = require('../game');
+const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer, unflipCards } = require('../game');
 
 
 beforeAll(() => {
@@ -24,12 +24,21 @@ describe('Memory Game Functions', () => {
     let mockCards;
     let mockContainer;
     let mockShuffleFunction;
+    
 
     beforeEach(() => {
         // Needed some mock elements to be able to properly test the flip card function - jest.fn info found here (https://jestjs.io/docs/mock-functions)
         mockCard1 = { classList: { add: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '1') };
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
+        // mock resetBoard for unflipCards function
+        
+        const resetBoard = jest.fn(() => {
+            hasFlippedCard = false;
+            lockBoard = false;
+            firstCard = null;
+            secondCard = null;
+        });
     });
 
 
@@ -38,6 +47,19 @@ describe('Memory Game Functions', () => {
         expect(mockCard1.classList.add).toHaveBeenCalledWith('card-flipped');
     });
 
+    test('unflipCards should unflip the selected cards', () => {
+        const mockFirstCard = { classList: { remove: jest.fn() } };
+        const mockSecondCard = { classList: { remove: jest.fn() } };
+    
+        let lockBoard = false;
+    
+        lockBoard = unflipCards(mockFirstCard, mockSecondCard);
+    
+        expect(mockFirstCard.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockSecondCard.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(lockBoard).toBe(false); // Ensure the lockBoard is set to false after unflipping the cards
+    });
+    
 
     test('startTimer should start the game timer', () => {
         // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)

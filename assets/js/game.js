@@ -124,21 +124,15 @@ function disableCards() {
 }
 
 
-
-function unflipCards() {
-    // Use lockboard boolean to ensure no cards can be flipped whilst cards are being unflipped
+function unflipCards(firstCard, secondCard) {
+    // Use lockBoard boolean to ensure no cards can be flipped whilst cards are being unflipped
     lockBoard = true;
-    // Need a delay in order to show both cards before they are unflipped - will use timeout function 
-    setTimeout(() => {
-        const audio = new Audio('../assets/audio/incorrect.mp3');
+    firstCard.classList.remove('card-flipped');
+    secondCard.classList.remove('card-flipped');
 
-        audio.play();
-        firstCard.classList.remove('card-flipped');
-        secondCard.classList.remove('card-flipped');
+    resetBoard();
 
-        resetBoard();
-    }, 500);
-
+    return lockBoard; // Return the updated lockBoard
 }
 
 function resetBoard() {
@@ -224,4 +218,5 @@ module.exports = {
     stopTimer,
     resetCardStyles,
     resetTimer,
+    unflipCards,
 };
