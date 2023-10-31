@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // ParseInt usage refreshed (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
     let bestTime = parseFloat(localStorage.getItem('bestTime')) || Infinity;
 
+    // Audio files - used new audio constructor as found here (https://gomakethings.com/how-to-play-a-sound-with-javascript/)
+    const correct = new Audio('..assets/audio/correct.mp3');
+    const incorrect = new Audio('..assets/audio/incorrect.mp3');
+    const winner = new Audio('..assets/audio/winner.mp3');
+
     // Shuffle function - went round in circles, did some additional reading on Fisher Yates (https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript)
     function shuffle(array) {
         let currentIndex = array.length,
@@ -206,9 +211,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     function disableCards() {
-        // Take correct cards out of play but leave them as flipped cards
-        const audio = new Audio(required('..assets/audio/correct.mp3')) 
-        audio.play()
+        // Take correct cards out of play but leave them as flipped cards 
+        correct.play()
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
 
@@ -216,8 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cardMatches += 2;
 
         if (cardMatches === cards.length) {
-            const audio = new Audio(required('..assets/audio/winner.mp3')) 
-            audio.play()
+            winner.play()
             stopTimer();
             const currentTime = minutes * 60 + seconds + milliseconds / 100;
 
@@ -271,8 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lockBoard = true;
         // Need a delay in order to show both cards before they are unflipped - will use timeout function 
         setTimeout(() => {
-            const audio = new Audio(required('..assets/audio/incorrect.mp3')) 
-            audio.play()
+            incorrect.play()
             firstCard.classList.remove('card-flipped');
             secondCard.classList.remove('card-flipped');
 
