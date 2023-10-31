@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function disableCards() {
         // Take correct cards out of play but leave them as flipped cards
-        const audio = new Audio('../assets/audio/correct.mp3');
+        const audio = new Audio('..assets/audio/correct.mp3');
 
         audio.play();
         firstCard.removeEventListener('click', flipCard);
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cardMatches += 2;
 
         if (cardMatches === cards.length) {
-            const audio = new Audio('../assets/audio/winner.mp3');
+            const audio = new Audio('..assets/audio/winner.mp3');
             audio.play();
             stopTimer();
             const currentTime = minutes * 60 + seconds + milliseconds / 100;
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lockBoard = true;
         // Need a delay in order to show both cards before they are unflipped - will use timeout function 
         setTimeout(() => {
-            const audio = new Audio('../assets/audio/incorrect.mp3');
+            const audio = new Audio('..assets/audio/incorrect.mp3');
 
             audio.play();
             firstCard.classList.remove('card-flipped');
