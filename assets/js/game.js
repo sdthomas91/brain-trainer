@@ -22,23 +22,37 @@ let cardMatches = 0;
 let cards = document.querySelectorAll('.card');
 
 
-// Toggle Background Music
 
-function resetGame(cards) { //include cards as a parameter for test to run properly
-    cards.forEach((card, index) => {
-        card.style.order = index;
-        card.classList.remove('card-flipped');
-        card.addEventListener('click', flipCard);
-    });
-    milliseconds = 0;
-    seconds = 0;
-    minutes = 0;
-    cardMatches = 0;
-    timerStarted = false;
-    document.getElementById('timer').textContent = `00:00:00`;
-    clearInterval(timerInterval);
-    shuffleCards(container, shuffle); //Include the container and shuffle as a parameters in order for shuffle function to work correctly
+// Breaking down the resetGame function in order to test it out
+// Run a resetCardStyle function separately - this will all be 
+// consolidated in final function but for testing purposes I needed to break down these functions
+// This will allow me to test each functionality of the larger function and then compile them in live project
+function resetCardStyles(card, index) { // Parameters purely for testing
+    card.style.order = index;
+    card.classList.remove('card-flipped');
+    card.addEventListener('click', flipCard);
 }
+
+function resetTimer() { //Do not need to include the previously included text content alteration - going to keep this simple for testing purposes
+    return {
+        milliseconds: 0,
+        seconds: 0,
+        minutes: 0,
+        timerStarted: false,
+    };
+}
+
+function resetGame(cards, container, shuffleFunction) {
+    cards.forEach((card, index) => {
+        resetCardStyles(card, index);
+    });
+    resetTimer();
+    cardMatches = 0;
+    shuffleCards(container, shuffleFunction);
+}
+
+// 
+
 
 
 
@@ -197,7 +211,6 @@ function formatTime(minutes, seconds, milliseconds) {
 
 
 
-
 // Export Functions 
 module.exports = {
     shuffleCards,
@@ -207,4 +220,6 @@ module.exports = {
     shuffle,
     flipCard,
     stopTimer,
+    resetCardStyles,
+    resetTimer,
 };
