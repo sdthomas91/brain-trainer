@@ -17,11 +17,13 @@ With the use of Jest I will continuously test my code with the red green refacto
 3. Additional Levels - For this stage of the project I included just 1 level to showcase the functionality of the game, including sound effetcs, animations and javascript elements such as the timer and onclick functions. In future developments the game will allow players to progress onto the next level, once they have completed the level(s) prior. They will also be able to revisit levels to work on their best times.
 4. Added achievements - ideally, in a later version of the game, there will be 3 stored tiers of completion times for each level. For each tier the player reaches, a star will be achieved. This will encourage players to practice and improve.
 5. Attempts counter - I wanted to use the attempts counter functionality, however the original intent was for it to count the card flip attempts. With the game board being as small as it is I decided to use it upon game completion for now. Future developments will see a "card flips" counter instead as well as a "failed" counter for whenever the user resets the game with the reset button.
+6. Confetti on completion - I saw a confetti framework I liked for when the level is completed but I didn't have time to fine tune it so will leave for future developments
 
 ## Known Bugs
 
 1. Music Toggle - The function itself works fine, however it causes issues in the console when added to the script.js file. I had assumed that the issue lay with the fact that the script was running before DOM had loaded. I tried using the DOMContentLoaded eventListener but this did not help. For now, the script runs fine as long as it is inserted straight into the html files. Not ideal, and a fix will be included in future developments. ----- UPDATE ----- decided to include music on all pages so as to avoid script loading issues and also to keep a consistent feel throughout the site. Music toggle funcion now flawless across pages and devices.
 2. Music Playing - there is a slight issue with the autoplay function in that it doesn't always play on page refresh. Fresh page load, or page load from clicking the link is usually successful. Look over a number of articles and tutorials but it would seem the setup is correct. Will need to be rectified in a later version. For now the toggle works and the music plays more often than it does not. Does not interfere with gameplay so not a major bug.
+3. Card flips - on some page loads the reset button is required to ensure the card flip function works correctly. Instances have dropped substantially since changing audio setup and also since removing confetti plugin. 
 
 ## User Experience (UX)
 
@@ -162,18 +164,18 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 - #### First Time Visitor Goals
 
-  1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the practitioner/organisation.
+  1. As a First Time Visitor, I want to easily understand the main purpose of the game and understand how to play.
 
-     1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the section of their choice. Underneath there is a Hero Image with encouraging text and a "Book Now" Call to action button.
-     2. The title gives a clear idea of the service being provided and prompts to book in.
-     3. The user has two options, click the call to action buttons or scroll down. The former will allow them to book/enquire about the services available, the latter will allow them to learn more about the organisation.
-     4. The back to top button gives the indication that there is more site to scroll, encouraging the exploration of the site.
+     1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar which clearly showcases a How To Play button and a help button.
+     2. The How to Play button opens a readable modal with clear text in the same window to minimise navigation away from the page
+     3. The instructions are thorought and clear
+     4. The help button gives the opportunity to request further help if still unsure
 
-  2. As a First Time Visitor, I want to be able to easily locate an option to contact or book in.
+  2. As a First Time Visitor, I want to be able to easily navigate the game and start a game with ease.
 
      1. There are two immediate options when first loading the page to book in for the services mentioned, wherein you can select the services you are interested in. This enables a modal so there is no need to leave the page in order to complete the booking process,.
-     1. The site has been designed to be fluid and never to entrap the user. The site provides a fixed nav bar and plenty of navigational links throughout the flow of the continous scroll page.
-     1. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
+     2. The site has been designed to be fluid and never to entrap the user. The site provides a fixed nav bar and plenty of navigational links throughout the flow of the continous scroll page.
+     3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
 
   3. As a First Time Visitor, I want to be able to easily navigate throughout the site to understand pricing and details of different services
 
