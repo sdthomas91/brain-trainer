@@ -36,101 +36,100 @@
     <!-- Navigation -->
     <!-- Bootstrap NAV template used https://codepen.io/JacobLett/pen/mXxKpE -->
     <div class="container-fluid navbar-container">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <!--  Show this only on mobile to medium screens  -->
-        <a
-          class="navbar-brand nav-brand-mobile d-lg-none mx-auto"
-          href="index.html"
-          ><h1 class="logo-text-mobile d-block d-md-none">
-            <img
-              src="assets/images/mobile-logo.png"
-              alt="Mobile Brain Trainer Logo"
-              style="width: 100%"
-        >
-          </h1>
-          <h1 class="logo-text-mobile d-none d-md-flex">BrainTrainer</h1></a
-        >
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarToggle"
-          aria-controls="navbarToggle"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!--  Use flexbox utility classes to change how the child elements are justified  -->
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarToggle"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item nav-icon-text list-icon">
-                <a  class="nav-link btn btn-navi" href="leaderboard.html">
-                
-                   <i
-                    class="d-inline d-lg-block fa-solid fa-trophy nav-icon shadow-text"
-                  ></i
-                  >Leaderboard
-                </a>
-            </li>
-            <li class="nav-item nav-icon-text list-icon">
-              
-                <!-- Button to toggle background music on and off -->
-                <button type="button" class="nav-link btn btn-navi" id="bg-music-toggle">
-                    <i
-                    class="d-inline d-lg-block fa-solid fa-volume-off nav-icon shadow-text"
-                  ></i
-                  >Music
-                </button>
-            </li>
-          </ul>
-
-          <!--   Show this only lg screens and up   -->
-          <a class="navbar-brand d-none d-lg-block" href="index.html"
-            ><h1 class="logo-text">BrainTrainer</h1></a
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <!--  Show this only on mobile to medium screens  -->
+          <a
+            class="navbar-brand nav-brand-mobile d-lg-none mx-auto"
+            href="index.html"
+            ><h1 class="logo-text-mobile d-block d-md-none">
+              <img
+                src="assets/images/mobile-logo.png"
+                alt="Mobile Brain Trainer Logo"
+                style="width: 100%"
           >
-
-          <ul class="navbar-nav">
-            <li class="nav-item nav-icon-text list-icon">
-              
-                <!-- How To Play Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
-                <button
-                  type="button"
-                  class="btn btn-navi"
-                  data-toggle="modal"
-                  data-target="#howToModal"
-                >
-                  <i
-                    class="d-inline d-lg-block fa-solid fa-circle-info nav-icon shadow-text"
-                  ></i
-                  >How To Play
-                </button>
-            </li>
-            <li class="nav-item nav-icon-text list-icon">
-              
-                <!-- Help Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
-                <button
-                  type="button"
-                  class="btn btn-navi"
-                  data-toggle="modal"
-                  data-target="#helpModal"
-                >
-                  <i
-                    class="d-inline d-lg-block fa-solid fa-circle-question nav-icon shadow-text"
-                  ></i
-                  >Help
-                </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!-- /Navigation -->
+            </h1>
+            <h1 class="logo-text-mobile d-none d-md-flex">BrainTrainer</h1></a
+          >
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggle"
+            aria-controls="navbarToggle"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarToggle"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item nav-icon-text list-icon">
+                  <a  class="nav-link btn btn-navi lb-link" href="leaderboard.html">
+                  
+                     <i
+                      class="d-inline d-lg-block fa-solid fa-trophy nav-icon shadow-text"
+                    ></i
+                    >Leaderboard
+                  </a>
+              </li>
+              <li class="nav-item nav-icon-text list-icon">
+                
+                  <!-- Button to toggle background music on and off -->
+                  <button type="button" class="nav-link btn btn-navi" id="bg-music-toggle">
+                      <i
+                      class="d-inline d-lg-block fa-solid fa-volume-off nav-icon shadow-text"
+                    ></i
+                    >Music
+                  </button>
+              </li>
+            </ul>
+  
+            <!--   Show this only lg screens and up   -->
+            <a class="navbar-brand d-none d-lg-block" href="index.html"
+              ><h1 class="logo-text">BrainTrainer</h1></a
+            >
+  
+            <ul class="navbar-nav">
+              <li class="nav-item nav-icon-text list-icon">
+                
+                  <!-- How To Play Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                  <button
+                    type="button"
+                    class="nav-link btn btn-navi"
+                    data-toggle="modal"
+                    data-target="#howToModal"
+                  >
+                    <i
+                      class="d-inline d-lg-block fa-solid fa-circle-info nav-icon shadow-text"
+                    ></i
+                    >How To Play
+                  </button>
+              </li>
+              <li class="nav-item nav-icon-text list-icon">
+                
+                  <!-- Help Button Trigger (https://getbootstrap.com/docs/4.0/components/modal/) -->
+                  <button
+                    type="button"
+                    class="nav-link btn btn-navi"
+                    data-toggle="modal"
+                    data-target="#helpModal"
+                  >
+                    <i
+                      class="d-inline d-lg-block fa-solid fa-circle-question nav-icon shadow-text"
+                    ></i
+                    >Help
+                  </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- /Navigation -->
     <!-- Winner Modal Hidden Trigger -->
     <button
       type="button"

@@ -8,7 +8,7 @@ Utilising Bootstrap row/column tool the site will present responsively and in a 
 
 With the use of Jest I will continuously test my code with the red green refactor method to ensure that each function is built in the most efficient way and to avoid future bugs,
 
-<h2 align="center"><img src="/assets/images/bt-mockup.png"></h2>
+<h2 align="center"><img src="assets/images/braintrainer-mockup.jpg"></h2>
 
 ## Future Developments
 
@@ -103,6 +103,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 - Issues with logo sizing impacting game view on smaller devices - used image and text combination with bootstrap responsive options to display each respectively. This allows for a more seamless cross platform experience.
 - Clearer notice that level is locked upon click and also when game was completed - originally had an alert but decided to use a modal and implement some logic to show the modal automatically once each relevant trigger was found.
 - Some users noted that occasionally after resetGame the checkForMatch wouldn't work properly and reset button would be required to ensure smooth gameplay. Combatted largley by rearranging functions and removing some unnecessary code that I was unaware of. 
+- Some users fedback that they were unsure which direction the progression would be on the homepage. Whilst it is not completely relevant for the current release I would address these concerns by adding some css to incorporate some sort of dashed line from level to level to show progression direction.
 
 ## Technologies Used
 
@@ -320,7 +321,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 - Error Sound : Sound effect from [PixaBay](https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=7184)
 - Correct Sound : Sound effect from [PixaBay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6033)
 - Winning Sound :  [UppBeat](https://uppbeat.io/browse/sfx/celebrate)
-- Background Music : 
+- Background Music : license included in assets/copyright
 
 #### README Mockup
 

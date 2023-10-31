@@ -389,6 +389,10 @@ p {
         width: 40%;
     }
 
+    .lb-link {
+        text-align: left;
+    }
+
     .progress-container {
         margin-top: 10px;
     }
