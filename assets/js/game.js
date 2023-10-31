@@ -44,12 +44,14 @@ function resetTimer() { //Do not need to include the previously included text co
 
 function resetGame(cards, container, shuffleFunction) {
     cards.forEach((card, index) => {
-        resetCardStyles(card, index);
+        resetCardStyles(card, index); // call resetCardStyle
     });
-    resetTimer();
-    cardMatches = 0;
-    shuffleCards(container, shuffleFunction);
+    resetTimer(); //call resetTimer
+    cardMatches = 0; //reset match counter
+    shuffleCards(container, shuffleFunction); //call shuffleCards function
 }
+
+
 
 // 
 
