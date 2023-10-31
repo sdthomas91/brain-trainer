@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener('DOMContentLoaded', function () {
     // Gobal variables required - tried to use minimal global vars but needs must
     let hasFlippedCard = false;

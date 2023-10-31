@@ -149,8 +149,14 @@ A separate tests document has been added to showcase the Javascript testing - th
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-- [W3C Markup Validator](https://validator.w3.org/nu/#textarea) - Results can be seen in TESTING.md including errors and final validation
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - - Results can be seen in TESTING.md including errors and final validation
+- [W3C Markup Validator](https://validator.w3.org/nu/#textarea) :
+
+|  index.html | level-1.html  |  leaderboard.html |
+|---|---|---|
+|  ![index.html](assets/images/index-html-val.png) |  ![level-1.html](assets/images/level-1-html-val.png) |  ![leaderboard.html](assets/images/leaderboard-html-val.png) |
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - -  all clear
+- ![style.css](assets/images/CSS-val.png)
 
 ### Testing User Stories from User Experience (UX) Section
 

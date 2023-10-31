@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, flipCard, startTimer, checkForMatch, disableCards, unflipCards, resetGame, stopTimer, formatTime, resetBoard } = require('../game');
+const { shuffleCards } = require('../game');
 
 
 

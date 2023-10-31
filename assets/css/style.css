@@ -277,7 +277,6 @@ p {
 
 .card-back {
     background-color: #fff;
-    color: #fff;
     transform: rotateY(180deg);
 }
 
