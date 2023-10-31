@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Audio files - used new audio constructor as found here (https://gomakethings.com/how-to-play-a-sound-with-javascript/)
     // Audio constructor alone wasn't enough - had to embed audio files as it was struggling to find the correct file path - put audio into HTML
     // audio actually loads quicker but there is a bug in that if the error audio hasn't finished and you make another error
-    // then the second error sound will not play. (https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep)
+    // then the second error sound will not play. 
     const correct = document.getElementById('correct');
     const incorrect = document.getElementById('incorrect');
     const winner = document.getElementById('winner');
