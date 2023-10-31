@@ -24,6 +24,8 @@ With the use of Jest I will continuously test my code with the red green refacto
 1. Music Toggle - The function itself works fine, however it causes issues in the console when added to the script.js file. I had assumed that the issue lay with the fact that the script was running before DOM had loaded. I tried using the DOMContentLoaded eventListener but this did not help. For now, the script runs fine as long as it is inserted straight into the html files. Not ideal, and a fix will be included in future developments. ----- UPDATE ----- decided to include music on all pages so as to avoid script loading issues and also to keep a consistent feel throughout the site. Music toggle funcion now flawless across pages and devices.
 2. Music Playing - there is a slight issue with the autoplay function in that it doesn't always play on page refresh. Fresh page load, or page load from clicking the link is usually successful. Look over a number of articles and tutorials but it would seem the setup is correct. Will need to be rectified in a later version. For now the toggle works and the music plays more often than it does not. Does not interfere with gameplay so not a major bug.
 3. Card flips - on some page loads the reset button is required to ensure the card flip function works correctly. Instances have dropped substantially since changing audio setup and also since removing confetti plugin. 
+4. The leaderboard navigation item on some screens presents as larger thant the other nav items - I have tried amending the "< a >" element css but it did not help. Something for future versions - does not effect gameplay.
+5. Favicon will not display, despite following previous steps taken and verifying with online resources. 
 
 ## User Experience (UX)
 
@@ -61,7 +63,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 - #### Imagery
 
-  - All images used will be credited - main logo and card front created by myself.
+  - All images created by myself including logo, card logo, card contents.
 
 - #### Interaction Feedback
 
@@ -100,6 +102,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 - A number of users fedback that they would rather the music play across all pages and maintain the functionality to toggle music on and off. Gentle piano music used as it can aid memory function and concentration.
 - Issues with logo sizing impacting game view on smaller devices - used image and text combination with bootstrap responsive options to display each respectively. This allows for a more seamless cross platform experience.
 - Clearer notice that level is locked upon click and also when game was completed - originally had an alert but decided to use a modal and implement some logic to show the modal automatically once each relevant trigger was found.
+- Some users noted that occasionally after resetGame the checkForMatch wouldn't work properly and reset button would be required to ensure smooth gameplay. Combatted largley by rearranging functions and removing some unnecessary code that I was unaware of. 
 
 ## Technologies Used
 
@@ -141,11 +144,15 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 12. [StackOverflow](https://stackoverflow.com/)
 
-- Used for code snippets and code validation
+- Used for code snippets and code validation, as well as tutorials and some vital help
 
 ## Testing
 
 A separate tests document has been added to showcase the Javascript testing - this can be found in the scripts directory. I also duplicated the script document which can be found is game.js - this was to avoid having to remove event listeners and comment out exports etc. for published site to run effectively but also to make testing easier.
+
+I was unable to complete JEST tests for all functions due to time constraints. I got very caught up in the JEST side of things as it was very new to me. A lot of stackOverflow help and youtube videos were needed to understand some of the more complex elements of the tests. There are still some elements that I don't fully grasp but all functions tested now pass. 
+
+Remaining functions were still tested through user testing and the game proves to function well. 
 
 - Little to no HTML CSS testing was required due to the simplicity of the web pages - still validated through W3C validator as listed below.
 
@@ -173,87 +180,70 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
   2. As a First Time Visitor, I want to be able to easily navigate the game and start a game with ease.
 
-     1. There are two immediate options when first loading the page to book in for the services mentioned, wherein you can select the services you are interested in. This enables a modal so there is no need to leave the page in order to complete the booking process,.
-     2. The site has been designed to be fluid and never to entrap the user. The site provides a fixed nav bar and plenty of navigational links throughout the flow of the continous scroll page.
-     3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
+     1. The game board is laid out nicely on the home page allowing easy access to all areas of the site 
+     2. Leaderboard navigation accessible and consistent header/nav on all pages allow UI friendly navigation process
+     3. Game accessible via tiles and easy navigation to either homepage or leaderboard from there.
 
-  3. As a First Time Visitor, I want to be able to easily navigate throughout the site to understand pricing and details of different services
+  3. As a First Time Visitor, I want to be able to easily understand what will happen when I interact with areas of the site
 
-     1. The user has immediate navigational ability to reach the pricing and services section via the nav bar
-     2. With the flow of the site, once the user has read the services section they are able to navigate by either scrolling to the next section for pricing or clicking on the "See Pricing" links to go directly to the relevant pricing.
-
-  4. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
-     1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
-     2. The user can also scroll to the bottom of any page on the site to locate social media links in the footer.
-     3. At the bottom of the Contact Us page, the user is told underneath the form, that alternatively they can contact the organisation on social media which highlights the links to them.
+     1. The user has immediate navigational ability to reach the leaderboard, toggle music and access help/how to
+     2. Constant user feedback either by sound effect or css effecvs allows the user to understand what can be interacted with and how it will behave
 
 - #### Returning Visitor Goals
 
-  1. As a Returning Visitor, I want to find new or existing services.
+  1. As a Returning Visitor, I want to see if there are new levels available.
 
-     1. All services are listed in the Book Now Modal so returning users can enquire directly about any new or existing services
-     2. The sites navigation allows smooth access to services section with full details of the service and a link to the pricing for that service
+     1. The homepage showcases all levels and clearly notifies when a level is locked or available
+     2. The obvious help option allows users to contact to request new levels or ask if anything new is available 
 
-  2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
+  2. As a Returning Visitor, I want to check my previous scores.
 
-     1. The navigation bar clearly highlights the "Contact" Section with additional ability to directly WhatsApp.
-     2. Here they can fill out the form on the page, there are also options including email, WhatsApp and Facebook.
-     3. The footer contains links to the organisations Facebook, Twitter and Instagram page as well as another link to the contact section.
-     4. Whichever link they click, it will be open up in a new tab to ensure the user can easily get back to the website.
-     5. The email button is set up to automatically open up your email app and autofill there email address in the "To" section.
-     6. The WhatsApp link will work to open a conversation directly in WhatsApp with the relevant number.
+     1. The level page will contain the existing high score and allow it to be over written if the new score is better
+     2. The leaderboard houses some stock scores but also logs the users high score for them to see how they are progressing
 
-  3. As a Returning Visitor, I want to find Community/Social links.
-     1. The Facebook Page can be found in the Contact Section and will open in a separate tab so as to allow easy navigation back to the main site.
-     2. Alternatively, the user can scroll to the bottom of the page where the footer is home to all relevant social links.
-
+  
 - #### Frequent User Goals
 
-  1. As a Frequent User, I want to be able to easily book my favourite services.
+  1. As a Frequent User, I want to be able to continuously improve upon my previous score.
 
-     1. The user would already be familiar with the Booking process but will always have easy access to the Book Now options in the callout or in the navbar that allows them to quickly submit a booking request for their chosen service.
+     1. The opportunity to log your high score, view it and improve upon it allows users to compete against themselves to continuously improve their speed and memory
 
-  2. As a Frequent User, I want to check to see if there are any new results images to see work/improvements.
+  2. As a Frequent User, I want to be able to progress.
 
-     1. The user would already be comfortable with the website layout and can easily click the gallery link to view up to date before and after images
-
-  3. As a Frequent User, I want to have easy contact options to discuss my bookings.
-     1. The user would be familiar with the site layout and can use the nav menu to easily locate the contact option
-     2. Alternatively, in the navbar also, the user may open a WhatsApp conversation directly
-     3. The user may wish to use the dedicated contact form or indeed any of the other contact options provided there including email, WhatsApp or Facebook (Messenger)
+     1. The option to climb the leaderboard rankings provides a way of the user measuring success and progression
+     2. Future developments will see extra level which will allow the user to move through harder challenges and progress both in the game and personally
 
 ### Further Testing
 
-- The Website was tested on Google Chrome, Microsoft Edge and Safari browsers. It was also tested in Internet Explorer Mode on Microsoft Edge.
-- The website was viewed on a variety of devices such as HP Windows Desktop, Macbook, iMac, iPhone12, iPhone 14 Pro, iPhone 8, iPad Air, iPad Pro 12.9", Pixel 5, Samsung Galaxy S20 Ultra, Surface Pro 7 and Nest Hub.
-- A large amount of testing was done to ensure that all sections on the continuous scroll were linking correctly.
+- The Website was tested on Google Chrome, Microsoft Edge and Safari browsers. It was also tested in Internet Explorer Mode on Microsoft Edge. There were some issues regarding autoplay on the audio but nothing that would effect gameplay
+- The website was viewed on a variety of devices such as HP Windows Desktop, Macbook, iMac, iPhone12, iPhone 14 Pro, iPhone 8, iPad Air, iPad Pro 12.9", Pixel 5, Samsung Galaxy S20 Ultra, Surface Pro 7 and Nest Hub. Responsiveness was patchy to begin with but using Bootstrap it now presents nicely across all platforms.
+- A large amount of testing was done to ensure that all user interactions both on home page and during gameplay were smooth and consistent.
 - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 #### Google Lighthouse
 
 - Google Lighthouse was used to ensure compatability, best practice and accessibility as well as load times.
 
-| Lighthouse mobile                                                     |                           Lighthouse Desktop                            |
-| --------------------------------------------------------------------- | :---------------------------------------------------------------------: |
-| ![Mobile Lighthouse Evaluation](/assets/images/lighthouse-mobile.png) | ![Desktop Lighthouse Evaluation](/assets/images/lighthouse-desktop.png) |
+|  index.html | level-1.html  |  leaderboard.html |
+|---|---|---|
+|  ![index.html](assets/images/index-lighthouse.png) |  ![level-1.html](assets/images/level-1-lighthouse.png) |  ![leaderboard.html](assets/images/leaderboard-lighthouse.png) |
 
 ##### Load Speed
 
--
+- Results were fairly good for all pages with 73% + all round. Slowest was level 1 for the obvious reason that it has the highest JS content.
+
 
 ##### Accessibility
 
-- Accessibility sits at 99 out of 100 - all vitals pass the only issue they have is that an H4 is used out of order. This is not something I feel affects the site in such a way that it needs amending.
-- Aria used correctly and passes on all checks
+- Accessibility sits at 100 out of 100 throughout. 
 
 ##### Best Practices
 
-- Best Practices sits at 92 out of 100 - this was vital as it threw up an issue I had overlooked - it failed to load the previously addd PNG files. This was because the images had not been amended on the Carousel and so still affected speed and best practices.
-- Amended issue identified - logged details in TESTING.md and all working well.
+- Best Practices sits at 92 out of 100 - there was one error, JS error logged to console. I cannot seem to get rid of these errors. 
 
 ### Known Bugs
 
-- No known bugs remain - game.test.js can be used to explore the different tests that were run following a red, green, refactor system.
+
 
 ## Deployment
 
