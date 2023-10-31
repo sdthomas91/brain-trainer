@@ -235,15 +235,11 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ##### Accessibility
 
-- Accessibility sits at 100 out of 100 throughout. 
+- Accessibility sits at 100 for all pages bar the leaderboard - not a big issue but complaints of headings not being sequencial but it is not relevant for this page.
 
 ##### Best Practices
 
 - Best Practices sits at 92 out of 100 - there was one error, JS error logged to console. I cannot seem to get rid of these errors. 
-
-### Known Bugs
-
-
 
 ## Deployment
 
