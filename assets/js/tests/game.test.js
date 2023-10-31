@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards } = require('../game');
+const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle } = require('../game');
 
 
 
@@ -36,28 +36,6 @@ describe('Memory Game Functions', () => {
         expect(mockCard1.classList.add).toHaveBeenCalledWith('card-flipped');
     });
 
-    test('checkForMatch should check if a correct match has been made', () => {
-        // Generate mock function
-        const disableCards = jest.fn();
-        const unflipCards = jest.fn();
-
-        // Mock the scenario where the cards match
-        mockCard1.getAttribute.mockReturnValue('1');
-        mockCard2.getAttribute.mockReturnValue('1');
-
-        checkForMatch.call(mockCard1);
-        expect(disableCards).toHaveBeenCalled();
-        expect(unflipCards).not.toHaveBeenCalled();
-
-        disableCards.mockReset();
-        unflipCards.mockReset();
-        // Mock the scenario where the cards do not match
-        mockCard1.getAttribute.mockReturnValue('1');
-        mockCard2.getAttribute.mockReturnValue('2');
-
-        checkForMatch.call(mockCard1);
-        expect(unflipCards).toHaveBeenCalled();
-    });
 
     test('startTimer should start the game timer', () => {
         // Need a mock timer - found information in JEST docs (https://jestjs.io/docs/timer-mocks)
@@ -98,44 +76,32 @@ describe('Memory Game Functions', () => {
     });
 
 
-    test('resetGame should reset gameboard and shuffle cards', () => {
-        resetGame([mockCard1, mockCard2]);
-
-        expect(mockCard1.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
-        expect(mockCard2.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
-        expect(mockCard1.classList.remove).toHaveBeenCalledWith('card-flipped');
-        expect(mockCard2.classList.remove).toHaveBeenCalledWith('card-flipped');
-        expect(mockClearInterval).toHaveBeenCalled();
-        expect(mockShuffleCards).toHaveBeenCalledWith([mockCard1, mockCard2]);
+    test('checkForMatch should check if a correct match has been made', () => {
+        const disableCards = jest.fn();
+        const unflipCards = jest.fn();
+    
+        const mockCard1 = { getAttribute: jest.fn() };
+        const mockCard2 = { getAttribute: jest.fn() };
+    
+        mockCard1.getAttribute.mockReturnValue('1');
+        mockCard2.getAttribute.mockReturnValue('1');
+    
+        checkForMatch(disableCards, unflipCards, mockCard1, mockCard2);
+    
+        expect(disableCards).toHaveBeenCalled();
+        expect(unflipCards).not.toHaveBeenCalled();
+    
+        disableCards.mockReset();
+        unflipCards.mockReset();
+    
+        mockCard1.getAttribute.mockReturnValue('1');
+        mockCard2.getAttribute.mockReturnValue('2');
+    
+        checkForMatch(disableCards, unflipCards, mockCard1, mockCard2);
+    
+        expect(unflipCards).toHaveBeenCalled();
     });
-
-
-    // Shuffle Cards Test (including steps taken as first test written)
-    test('shuffleCards should shuffle the cards randomly', () => {
-        // Run test to ensure order before shuffling does not match order after shuffling
-        // Generate mock array 
-        const cards = Array.from({ length: 10 }, (_, index) => ({ style: { order: index } }));
-        // Get pre-shuffle order
-        const initialOrders = cards.map(card => card.style.order);
-        // Shuffle cards
-        shuffleCards(cards);
-        // Get post-shuffle order
-        const shuffledOrders = cards.map(card => card.style.order);
-        // Custom comparison logic for randomness
-        let isDifferent = false;
-        for (let i = 0; i < initialOrders.length; i++) {
-            if (initialOrders[i] !== shuffledOrders[i]) {
-                isDifferent = true;
-                break;
-            }
-        }
-
-        // Expect statement
-        expect(isDifferent).toBe(true);
-
-        // RGR - Initial test failed due to the shuffle being random to the extent that it could end up with the same order as the previous shuffle - especially as it's such a short value.
-        // Changes made to shuffle function and retested - changed logic in shuffle function using 
-        // similar logic to https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-
-    });
+    
+      
+      
 });

@@ -19,14 +19,17 @@ let cardMatches = 0;
 
 
 //Generate card array for use throughout 
-const cards = document.querySelectorAll('.card');
+let cards = document.querySelectorAll('.card');
 
 
 // Toggle Background Music
 
 function resetGame() {
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    cards.forEach(card => card.classList.remove('card-flipped'));
+    cards.forEach((card, index) => {
+        card.style.order = index;
+        card.classList.remove('card-flipped');
+        card.addEventListener('click', flipCard);
+    });
     milliseconds = 0;
     seconds = 0;
     minutes = 0;
@@ -35,7 +38,8 @@ function resetGame() {
     document.getElementById('timer').textContent = `00:00:00`;
     clearInterval(timerInterval);
     shuffleCards(cards);
-};
+}
+
 
 
 
@@ -70,7 +74,7 @@ function flipCard() {
     }
 }
 
-function checkForMatch() {
+function checkForMatch(disableCards, unflipCards, firstCard, secondCard) {
     if (firstCard && secondCard) {
         const firstCardData = firstCard.getAttribute('data-card');
         const secondCardData = secondCard.getAttribute('data-card');
@@ -162,31 +166,33 @@ function formatTime(minutes, seconds, milliseconds) {
     );
 }
 
-
+function shuffle(array) {
+    let currentIndex = array.length,
+      tempValue,
+      randomIndex;
+  
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      tempValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = tempValue;
+    }
+  
+    return array;
+  }
 
 //Shuffle the cards using cards array - Final shuffle logic was found using https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleCards(cards) {
-    let currentIndex = cards.length;
-    let randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex > 0) {
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [cards[currentIndex].style.order, cards[randomIndex].style.order] = [
-            cards[randomIndex].style.order,
-            cards[currentIndex].style.order
-        ];
-    }
-
-    return cards;
-}
-
-
-shuffleCards(cards); // Shuffle cards on game load - including automatic reset after completion 
+function shuffleCards() {
+    const container = document.querySelector('.game-container');
+  
+    cards = shuffle(cards);
+  
+    cards.forEach((card, index) => {
+      card.style.order = index;
+    });
+  }
 
 
 
@@ -194,12 +200,13 @@ shuffleCards(cards); // Shuffle cards on game load - including automatic reset a
 // Export Functions 
 module.exports = {
     shuffleCards,
-    flipCard,
+    resetGame,
     startTimer,
     checkForMatch,
+    shuffle,
+    flipCard,
     disableCards,
     unflipCards,
-    resetGame,
     stopTimer,
     formatTime,
     resetBoard,
