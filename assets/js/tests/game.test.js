@@ -102,6 +102,25 @@ describe('Memory Game Functions', () => {
         expect(unflipCards).toHaveBeenCalled();
     });
     
-      
+    test('shuffleCards should shuffle the cards randomly', () => {
+        const mockContainer = {
+            children: [
+                { style: { order: 0 } },
+                { style: { order: 1 } },
+                { style: { order: 2 } },
+                { style: { order: 3 } },
+                { style: { order: 4 } }
+            ]
+        };
+
+        const mockShuffleFunction = jest.fn(array => {
+            return array.reverse(); // Mocking the shuffle function to simply reverse the array for testing purposes.
+        });
+
+        shuffleCards(mockContainer, mockShuffleFunction);
+
+        expect(mockShuffleFunction).toHaveBeenCalled(); // Asserting that the shuffle function has been called.
+        // Add further assertions as needed to verify the behavior of the shuffleCards function.
+    });
       
 });

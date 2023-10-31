@@ -166,33 +166,35 @@ function formatTime(minutes, seconds, milliseconds) {
     );
 }
 
-function shuffle(array) {
-    let currentIndex = array.length,
-      tempValue,
-      randomIndex;
-  
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      tempValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = tempValue;
+    // Shuffle function - went round in circles, did some additional reading on Fisher Yates (https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript)
+    function shuffle(array) {
+        let currentIndex = array.length,
+            tempValue,
+            randomIndex;
+      
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+      
+            tempValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = tempValue;
+        }
+      
+        return array;
     }
-  
-    return array;
-  }
 
-//Shuffle the cards using cards array - Final shuffle logic was found using https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleCards() {
-    const container = document.querySelector('.game-container');
-  
-    cards = shuffle(cards);
-  
-    cards.forEach((card, index) => {
-      card.style.order = index;
-    });
-  }
+    //   Function to shuffle cards calls on the already shuffled array using the Fisher Yates logic - potentially 
+    //   could be simplified but this works for now - this should be scalable as well so will work on larger grids.
+    function shuffleCards(container, shuffleFunction) {
+        let cards = Array.from(container.children);
+      
+        cards = shuffleFunction(cards);
+      
+        cards.forEach((card, index) => {
+          card.style.order = index;
+        });
+    }
 
 
 
@@ -205,9 +207,4 @@ module.exports = {
     checkForMatch,
     shuffle,
     flipCard,
-    disableCards,
-    unflipCards,
-    stopTimer,
-    formatTime,
-    resetBoard,
 };
