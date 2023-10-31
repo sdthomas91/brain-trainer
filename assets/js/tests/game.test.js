@@ -5,7 +5,7 @@
 // provided a solution on how to install jsdom
 
 // Destructure the named export correctly
-const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle } = require('../game');
+const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer } = require('../game');
 
 
 
@@ -123,4 +123,14 @@ describe('Memory Game Functions', () => {
         // Add further assertions as needed to verify the behavior of the shuffleCards function.
     });
       
+    test('stopTimer should clear the timer interval', () => {
+        const clearIntervalMock = jest.fn();
+        const mockInterval = 123; // Assuming you have a mock interval value
+    
+        global.clearInterval = clearIntervalMock; // Mocking the clearInterval function
+    
+        stopTimer(mockInterval);
+    
+        expect(clearIntervalMock).toHaveBeenCalledWith(mockInterval);
+    });
 });

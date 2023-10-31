@@ -152,9 +152,11 @@ function startTimer() {
     }, 10);
 }
 
-function stopTimer() {
-    clearInterval(timerInterval);
+function stopTimer(interval) {
+    clearInterval(interval);
 }
+
+
 
 function formatTime(minutes, seconds, milliseconds) {
     return (
@@ -207,4 +209,5 @@ module.exports = {
     checkForMatch,
     shuffle,
     flipCard,
+    stopTimer,
 };
