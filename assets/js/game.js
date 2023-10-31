@@ -24,7 +24,7 @@ let cards = document.querySelectorAll('.card');
 
 // Toggle Background Music
 
-function resetGame() {
+function resetGame(cards) { //include cards as a parameter for test to run properly
     cards.forEach((card, index) => {
         card.style.order = index;
         card.classList.remove('card-flipped');
@@ -37,11 +37,8 @@ function resetGame() {
     timerStarted = false;
     document.getElementById('timer').textContent = `00:00:00`;
     clearInterval(timerInterval);
-    shuffleCards(cards);
+    shuffleCards(container, shuffle); //Include the container and shuffle as a parameters in order for shuffle function to work correctly
 }
-
-
-
 
 
 

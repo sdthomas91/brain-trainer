@@ -19,7 +19,7 @@ beforeAll(() => {
 });
 
 describe('Memory Game Functions', () => {
-    let mockCard1, mockCard2, mockClearInterval, mockShuffleCards;
+    let mockCard1, mockCard2 ;
 
 
     beforeEach(() => {
@@ -133,4 +133,24 @@ describe('Memory Game Functions', () => {
     
         expect(clearIntervalMock).toHaveBeenCalledWith(mockInterval);
     });
+
+    test('resetGame should refresh gameplay and leave board in a pre-played state', () => {
+        // Mocking the cards array with sample elements
+        const mockCards = [mockCard1, mockCard2];
+
+        resetGame(mockCards);
+
+        // Assertions for each mock card
+        expect(mockCard1.style.order).toBe(0);
+        expect(mockCard2.style.order).toBe(1);
+        expect(mockCard1.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockCard2.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockCard1.removeEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+        expect(mockCard2.removeEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+        expect(mockCard1.addEventListener).toHaveBeenCalledWith('click', flipCard);
+        expect(mockCard2.addEventListener).toHaveBeenCalledWith('click', flipCard);
+        expect(stopTimer).toHaveBeenCalled();
+        expect(shuffleCards).toHaveBeenCalled();
+    });
+    
 });
