@@ -26,6 +26,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 3. Card flips - on some page loads the reset button is required to ensure the card flip function works correctly. Instances have dropped substantially since changing audio setup and also since removing confetti plugin. Have checked console when issue occurs but nothing seems to show. resetGame function works seemginly flawlessly so will require furhter investigation but I am out of time. 
 4. The leaderboard navigation item on some screens presents as larger thant the other nav items - I have tried amending the "< a >" element css but it did not help. Something for future versions - does not effect gameplay.
 5. Favicon will not display, despite following previous steps taken and verifying with online resources. 
+6. Best time/High score - if new player, populates with NaN to begin with. This can be fixed in future versions - will be a case of some logic that means if NaN do not display this text.
 
 ## User Experience (UX)
 
@@ -151,7 +152,7 @@ With the use of Jest I will continuously test my code with the red green refacto
 
 A separate tests document has been added to showcase the Javascript testing - this can be found in the scripts directory. I also duplicated the script document which can be found is game.js - this was to avoid having to remove event listeners and comment out exports etc. for published site to run effectively but also to make testing easier.
 
-I was unable to complete JEST tests for all functions due to time constraints. I got very caught up in the JEST side of things as it was very new to me. A lot of stackOverflow help and youtube videos were needed to understand some of the more complex elements of the tests. There are still some elements that I don't fully grasp but all functions tested now pass. 
+I was unable to complete JEST tests for all functions due to time constraints. I got very caught up in the JEST side of things as it was very new to me. A lot of stackOverflow help and youtube videos were needed to understand some of the more complex elements of the tests. There are still some elements that I don't fully grasp but all functions tested now pass. I did manage to test all CORE functions relating to gameplay. The only functions left out were the updating the best time and also toggling the music. Both were suitably tested through user testing though.  
 
 Remaining functions were still tested through user testing and the game proves to function well. 
 
