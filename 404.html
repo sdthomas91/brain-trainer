@@ -32,14 +32,17 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
-  <body onload="redirect()">
+  <body onload="redirect()" style="height: 100vh">
 	<h1 style="text-align: center; padding-top: 50px; display: block;">Redirecting...</h1>
 	<script>
 	  function redirect() {
+        alert(`This page doesn't exist. You will now be taken back to the homepage`);
 		setTimeout(function(){ 
+
 				window.location.replace("/");
+                
 			}
-			, 100);	
+			, 5000);	
 		}
 	</script>
   </body>
