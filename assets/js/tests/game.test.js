@@ -4,9 +4,9 @@
 // Issue regarding testing due to incorrect config - https://stackoverflow.com/questions/72013449/upgrading-jest-to-v29-error-test-environment-jest-environment-jsdom-cannot-be - 
 // provided a solution on how to install jsdom
 
+// A lot of valuable knowledge was gained and implemented thanks to this youtube video as a foundation - https://www.youtube.com/watch?v=OS5mVVM5vAg
 // Destructure the named export correctly
-const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer, unflipCards } = require('../game');
-
+const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer, unflipCards, resetBoard } = require('../game');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -20,10 +20,6 @@ beforeAll(() => {
 
 describe('Memory Game Functions', () => {
     let mockCard1; 
-    let mockCard2;
-    let mockCards;
-    let mockContainer;
-    let mockShuffleFunction;
     
 
     beforeEach(() => {
@@ -32,7 +28,7 @@ describe('Memory Game Functions', () => {
         mockCard2 = { classList: { add: jest.fn(), remove: jest.fn() }, setAttribute: jest.fn(), getAttribute: jest.fn(() => '2') };
         mockElement = { textContent: '' };
         // mock resetBoard for unflipCards function
-        
+
         const resetBoard = jest.fn(() => {
             hasFlippedCard = false;
             lockBoard = false;
@@ -59,6 +55,7 @@ describe('Memory Game Functions', () => {
         expect(mockSecondCard.classList.remove).toHaveBeenCalledWith('card-flipped');
         expect(lockBoard).toBe(false); // Ensure the lockBoard is set to false after unflipping the cards
     });
+    
     
 
     test('startTimer should start the game timer', () => {
@@ -244,3 +241,29 @@ describe('resetGameTests', () => {
 
   });
 
+
+  
+
+ describe('resetBoard separate tests as resetBoard used as mock function in previous suite', () => {
+    let hasFlippedCard;
+    let lockBoard;
+    let firstCard;
+    let secondCard;
+  
+    beforeEach(() => {
+      hasFlippedCard = true;
+      lockBoard = true;
+      firstCard = {};
+      secondCard = {};
+    });
+  
+    test('resetBoard should reset the card tiles to a playable state', () => {
+      const { hasFlippedCard: updatedHasFlippedCard, lockBoard: updatedLockBoard, firstCard: updatedFirstCard, secondCard: updatedSecondCard } = resetBoard(hasFlippedCard, lockBoard, firstCard, secondCard);
+  
+      expect(updatedHasFlippedCard).toBe(false);
+      expect(updatedLockBoard).toBe(false);
+      expect(updatedFirstCard).toBeNull();
+      expect(updatedSecondCard).toBeNull();
+    });
+  });
+  

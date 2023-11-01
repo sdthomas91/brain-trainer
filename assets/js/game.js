@@ -130,19 +130,28 @@ function unflipCards(firstCard, secondCard) {
     firstCard.classList.remove('card-flipped');
     secondCard.classList.remove('card-flipped');
 
-    resetBoard();
+    resetBoardTest();
 
     return lockBoard; // Return the updated lockBoard
 }
 
-function resetBoard() {
+function resetBoardTest() {
     // Reset the boards gameplay
     hasFlippedCard = false;
     lockBoard = false;
     firstCard = null;
     secondCard = null;
+  }
 
-};
+function resetBoard(hasFlippedCard, lockBoard, firstCard, secondCard) {
+    // Reset the boards gameplay
+    hasFlippedCard = false;
+    lockBoard = false;
+    firstCard = null;
+    secondCard = null;
+  
+    return { hasFlippedCard, lockBoard, firstCard, secondCard };
+  }
 
 function startTimer() {
     timerInterval = setInterval(function () {
@@ -219,4 +228,5 @@ module.exports = {
     resetCardStyles,
     resetTimer,
     unflipCards,
+    resetBoard,
 };
