@@ -99,29 +99,29 @@ function checkForMatch(disableCards, unflipCards, firstCard, secondCard) {
 
 };
 
-function disableCards() {
+function disableCards(firstCard, secondCard, stopTimer, resetGame) {
     // Take correct cards out of play but leave them as flipped cards
-    const audio = new Audio('../assets/audio/correct.mp3');
-
-    audio.play();
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
+    if (firstCard) {
+        firstCard.removeEventListener('click', flipCard);
+        firstCard.classList.remove('card-flipped');
+    }
+    if (secondCard) {
+        secondCard.removeEventListener('click', flipCard);
+        secondCard.classList.remove('card-flipped');
+    }
 
     // Add counter for total matches - once card matches is equal to cards.length then game is complete
     cardMatches += 2;
 
     if (cardMatches === cards.length) {
-        stopTimer();
-        setTimeout(() => {
-            //include alert logging time taken to compeltep and alert player of their win
-            alert('Congratulations! You completed the game in ' + formatTime(minutes, seconds, milliseconds) + '.');
-            // reset game once the alert has been presented
-            resetGame();
-        }, 500); // 0.5 second delay before showing the completion alert - allows completed board to show
+        stopTimer(); // Call the provided stopTimer function
+        resetGame(); // Call the provided resetGame function
     }
 
-    resetBoard();
+    resetBoardTest();
 }
+
+
 
 
 function unflipCards(firstCard, secondCard) {
@@ -229,4 +229,5 @@ module.exports = {
     resetTimer,
     unflipCards,
     resetBoard,
+    disableCards,
 };

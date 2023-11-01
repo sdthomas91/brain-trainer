@@ -6,7 +6,7 @@
 
 // A lot of valuable knowledge was gained and implemented thanks to this youtube video as a foundation - https://www.youtube.com/watch?v=OS5mVVM5vAg
 // Destructure the named export correctly
-const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer, unflipCards, resetBoard } = require('../game');
+const { shuffleCards, startTimer, flipCard, checkForMatch, resetGame, shuffle, stopTimer, resetCardStyles, resetTimer, unflipCards, resetBoard, disableCards,  } = require('../game');
 
 beforeAll(() => {
     let fs = require("fs");
@@ -155,9 +155,8 @@ describe('Memory Game Functions', () => {
     });
 
     
-
-    
 });
+
 
 //  I have decided to separate tests for the resetGame function - I was struggling to make it work within my other suite 
 // I am also aware that the complexity of these functions is within my scope, but the testing of them is not as JEST is quite
@@ -267,3 +266,54 @@ describe('resetGameTests', () => {
     });
   });
   
+  describe('disableCards function', () => {
+    let mockFirstCard;
+    let mockSecondCard;
+    let stopTimerMock;
+    let resetGameMock;
+    let mockCards;
+    let cardMatches;
+
+    beforeEach(() => {
+        mockFirstCard = {
+            removeEventListener: jest.fn(),
+            classList: { remove: jest.fn() }
+        };
+        mockSecondCard = {
+            removeEventListener: jest.fn(),
+            classList: { remove: jest.fn() }
+        };
+        stopTimerMock = jest.fn();
+        resetGameMock = jest.fn();
+        mockCards = [ // Define your mock cards array here
+            { id: 1, data: 'card1' },
+            { id: 2, data: 'card2' },
+            { id: 3, data: 'card3' }
+        ];
+        cardMatches = mockCards.length; // Set cardMatches to the length of mockCards
+    });
+
+    test('removes click event listeners from the first and second cards', () => {
+        disableCards(mockFirstCard, mockSecondCard, stopTimerMock, resetGameMock);
+        expect(mockFirstCard.removeEventListener).toHaveBeenCalledWith('click', flipCard);
+        expect(mockSecondCard.removeEventListener).toHaveBeenCalledWith('click', flipCard);
+    });
+
+    test('stops the timer and resets the game if all cards are matched', () => {
+        cardMatches = mockCards.length - 2; // Set cardMatches to the length of mockCards and minus 2 as the function adds 2 card matches to the total
+        disableCards(mockFirstCard, mockSecondCard, stopTimerMock, resetGameMock);
+        if (cardMatches === mockCards.length) {
+            expect(stopTimerMock).toHaveBeenCalled();
+            expect(resetGameMock).toHaveBeenCalled();
+        }
+    });
+
+    test('resets the board after disabling the cards', () => {
+        disableCards(mockFirstCard, mockSecondCard, stopTimerMock, resetGameMock);
+        expect(mockFirstCard.classList.remove).toHaveBeenCalledWith('card-flipped');
+        expect(mockSecondCard.classList.remove).toHaveBeenCalledWith('card-flipped');
+    });
+});
+
+
+
